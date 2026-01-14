@@ -1,0 +1,310 @@
+.fd-work--container {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 4rem;
+    color: #eee;
+    overflow: hidden;
+    background: linear-gradient(to top, #000000 0%, #0b0b0b 40%, #0b0b0b 100%);
+}
+
+.fd-work--title h1 {
+    font-size: 8.5rem;
+    text-transform: lowercase;
+    margin-bottom: 2rem;
+    max-width: 950px;
+    font-family: "Cinzel", serif;
+    letter-spacing: 0.3em;
+    line-height: 0.901;
+    word-spacing: -6.5rem;
+}
+
+.fd-work--title h1 span {
+    letter-spacing: 0;
+    color: #917032;
+}
+
+.fd-work--content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    padding: 4rem;
+}
+
+.fd-work--item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    font-family: "Cinzel", serif;
+}
+
+.fd-work--item.reverse {
+    flex-direction: row-reverse;
+}
+
+.fd-work--text h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.2;
+}
+
+.fd-work--text h2 span {
+    display: block;
+}
+
+.fd-work--text p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #aaa;
+    max-width: 300px;
+}
+
+.fd-work--image {
+    position: relative;
+}
+
+.fd-work--more {
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    transition: all 0.5s ease-out;
+    font-size: 1.75em;
+    color: #eee;
+    border: none;
+    background: transparent;
+    font-family: "Cinzel", serif;
+    cursor: pointer;
+}
+
+.fd-work--image:hover .fd-work--more {
+    opacity: 1;
+}
+
+.fd-work--image:hover img {
+    filter: brightness(0.2) grayscale(100%);
+}
+
+.fd-work--image img {
+    width: 700px;
+    height: 250px;
+    border-radius: 4px;
+    object-fit: cover;
+    filter: brightness(0.8) grayscale(60%);
+    transition: all 0.5s ease-out;
+}
+
+.fd-work--menu-btn {
+    background: none;
+    border: 1px solid #917032;
+    color: #eee;
+    padding: 0.5rem 1.2rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: "Cinzel", serif;
+    font-size: 1rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.fd-work--menu-btn:hover {
+    background: #222;
+    color: #917032;
+}
+
+/* Menú lateral */
+.fd-work--menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    background: #111;
+    padding: 2rem 1rem;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.6);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: slideIn 0.3s ease-out;
+    z-index: 2000;
+}
+
+.fd-work--menu-close {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #eee;
+    cursor: pointer;
+}
+
+.fd-work--menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.fd-work--menu li {
+    padding: 0.6rem 0;
+    color: #eee;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    font-family: "Cinzel", serif;
+}
+
+.fd-work--menu li:hover {
+    color: #917032;
+}
+
+/* Animación entrada */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+.fd-work--detail {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+    overflow: hidden;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.fd-work--details-container {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+}
+
+.fd-work--detail-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: transform 0.6s ease-in-out;
+}
+
+.fd-work--detail-overlay {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 40%;
+    height: 100%;
+    background: #0d0d0d;
+    color: #eee;
+    padding: 3rem 2rem;
+    font-family: "Cinzel", serif;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    z-index: 2;
+    opacity: 0;
+    animation: slideOverlay 0.6s ease forwards;
+    animation-delay: 1s;
+    /* aparece un segundo después */
+    box-sizing: border-box;
+}
+
+@keyframes slideOverlay {
+    to {
+        left: 0;
+        opacity: 1;
+    }
+}
+
+/* Botón cerrar */
+.fd-work--detail-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #eee;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+/* Lista de lenguajes */
+.fd-work--langs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0;
+    padding: 0;
+    list-style: none;
+    cursor: pointer;
+}
+
+.fd-work--langs li {
+    background-color: #917032;
+    /* color base: dorado medio */
+    color: #fff;
+    /* texto claro para contraste */
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.fd-work--langs li:hover {
+    background-color: #eed99f;
+    /* tono más claro al hover */
+    color: #111;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+}
+
+
+/* Links de GitHub y Demo */
+.fd-work--links {
+    display: flex;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.fd-work--links a {
+    text-decoration: none;
+    border: 1px solid #523d23;
+    background: transparent;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.fd-work--links a:hover {
+    border: 1px solid #917032;
+    /* dorado al hover */
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}

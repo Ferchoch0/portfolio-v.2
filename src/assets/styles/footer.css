@@ -1,0 +1,61 @@
+.fd-footer {
+    background: #000; /* fondo negro */
+    color: #fff;
+    text-align: center;
+    padding: 3rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+}
+
+.fd-footer--top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.fd-footer--title {
+    font-family: "Cinzel", serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #eed99f;
+}
+
+.fd-footer--socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.fd-footer--socials a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.fd-footer--socials a:hover {
+    color: #eed99f;
+    transform: translateY(-3px);
+}
+
+.fd-footer--lang-select {
+    margin-top: 1rem;
+    padding: 0.4rem 0.8rem;
+    background: #111;
+    color: #fff;
+    border: 1px solid #eed99f;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.fd-footer--lang-select option {
+    background: #111;
+    color: #fff;
+}
+
+.fd-footer--bottom {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}

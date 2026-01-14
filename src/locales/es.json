@@ -1,0 +1,96 @@
+{
+    "hero": {
+        "welcome": "Bienvenido",
+        "toMy": "a mi",
+        "portfolio": "Portafolio",
+        "name": "Delvalle Fernando",
+        "downloadCV": "Descargar CV"
+    },
+    "navbar": {
+        "home": "Inicio",
+        "about": "Sobre mí",
+        "skills": "Habilidades",
+        "works": "Proyectos"
+    },
+    "about": {
+        "titleSmall": "Sobre mí",
+        "titleBig": "soy <span>Delvalle Fernando</span>",
+        "quote": "“El mejor modo de <span>predecir</span> el futuro es <span>crearlo</span>.”",
+        "description": "Un desarrollador de software con pasión por la tecnología y la innovación. Me gusta crear soluciones prácticas, eficientes y escalables, siempre pensando en cómo mejorar la experiencia de las personas que las usan. Me motiva enfrentar nuevos retos, optimizar procesos y mantenerme en aprendizaje constante para seguir creciendo tanto en lo técnico como en lo creativo."
+    },
+    "skills": {
+        "title": "Habilidades",
+        "description": "Tecnologías, herramientas y lenguajes que uso en proyectos reales."
+    },
+    "works": {
+        "title": "Proyectos Seleccionados",
+        "moreProjects": "Más Proyectos",
+        "moreDetails": "Más Detalles",
+        "projects": {
+            "otter": {
+                "title": "Otter",
+                "subtitle": "Task",
+                "description": "TaskForge+ es una aplicación web creada para ayudar a los usuarios a organizar y gestionar su negocio de forma eficiente. Permite registrar stock, ventas y compras, entre otras funciones. Utiliza una base de datos MySQL con PHP y sigue el modelo MVC para mantener un código limpio y escalable.",
+                "longDescription": ""
+            },
+            "cpa": {
+                "title": "CPA",
+                "subtitle": "Panel",
+                "description": "Panel de control para la administracion de la app movil de CPA Refrigeracion",
+                "longDescription": ""
+            },
+            "mottoso": {
+                "title": "Mottoso",
+                "subtitle": "Propiedades",
+                "description": "Pagina web de para una inmobiliaria local en San Clemente del Tuyú, Argentina",
+                "longDescription": ""
+            },
+            "beretta": {
+                "title": "Beretta",
+                "subtitle": "Control Panel",
+                "description": "Panel de control para la gestión interna de la logica y transporte de una empresa de cargas",
+                "longDescription": ""
+            },
+            "tateti": {
+                "title": "Ta-Te-Ti",
+                "subtitle": "Game",
+                "description": "Videojuego clásico de Ta-Te-Ti desarrollado con React. Con una interfaz intuitiva y atractiva.",
+                "longDescription": ""
+            },
+            "portfolio-v.1": {
+                "title": "mi Portfolio",
+                "subtitle": "Version 1",
+                "description": "Mi primer portafolio personal desarrollado con React y CSS.",
+                "longDescription": ""
+            },
+            "portfolio-other": {
+                "title": "Portfolio",
+                "subtitle": "Otter-Solution",
+                "description": "Portfolio corporativo de Otter-Solution, una empresa emergente de desarrollo de software.",
+                "longDescription": ""
+            },
+            "sassa": {
+                "title": "Sassa",
+                "subtitle": "App Financiera",
+                "description": "Landing page publicitaria de una aplicación financiera llamada Sassa.",
+                "longDescription": ""
+            },
+            "tattoo": {
+                "title": "Tattoo",
+                "subtitle": "Sizer",
+                "description": "Sitio web para ayudar a los tatuadores en la impresion de las plantillas de tatuajes",
+                "longDescription": ""
+            },
+            "another": {
+                "title": "Otro_",
+                "subtitle": "Proyecto",
+                "description": "Proyecto extra disponible solo en el menú",
+                "longDescription": ""
+            }
+        }
+    },
+    "footer": {
+        "connectWithMe": "Conectémonos",
+        "rightsReserved": "Todos los derechos reservados."
+    }
+}

@@ -1,0 +1,96 @@
+{
+    "hero": {
+        "welcome": "Welcome",
+        "toMy": "to my",
+        "portfolio": "Portfolio",
+        "name": "Delvalle Fernando",
+        "downloadCV": "Download CV"
+    },
+    "navbar": {
+        "home": "Home",
+        "about": "About Me",
+        "skills": "Skills",
+        "works": "Works"
+    },
+    "about": {
+        "titleSmall": "About Me",
+        "titleBig": "I am <span>Delvalle Fernando</span>",
+        "quote": "“The best way to <span>predict</span> the future is to <span>create</span> it.”",
+        "description": "A software developer with a passion for technology and innovation. I like creating practical, efficient, and scalable solutions, always thinking about improving the user experience. I’m motivated by facing new challenges, optimizing processes, and continuously learning to grow both technically and creatively."
+    },
+    "skills": {
+        "title": "Skills",
+        "description": "Technologies, tools, and languages I use in real projects."
+    },
+    "works": {
+        "title": "Selected Works",
+        "moreProjects": "More Projects",
+        "moreDetails": "More Details",
+        "projects": {
+            "otter": {
+                "title": "Otter",
+                "subtitle": "Task",
+                "description": "TaskForge+ is a web app designed to help users efficiently organize and manage their businesses. It allows users to record stock, sales, and purchases, among other features. The app uses a MySQL database with PHP and follows the MVC pattern for clean, scalable code.",
+                "longDescription": ""
+            },
+            "cpa": {
+                "title": "CPA",
+                "subtitle": "Panel",
+                "description": "Control panel for the administration of the CPA Refrigeration mobile app",
+                "longDescription": ""
+            },
+            "mottoso": {
+                "title": "Mottoso",
+                "subtitle": "Real Estate",
+                "description": "Website for a local real estate agency in San Clemente del Tuyú, Argentina",
+                "longDescription": ""
+            },
+            "beretta": {
+                "title": "Beretta",
+                "subtitle": "Control Panel",
+                "description": "Control panel for the internal management of logistics and transportation of a freight company",
+                "longDescription": ""
+            },
+            "tateti": {
+                "title": "Ta-Te-Ti",
+                "subtitle": "Game",
+                "description": "Classic Ta-Te-Ti game developed with React. Featuring an intuitive and attractive interface.",
+                "longDescription": ""
+            },
+            "portfolio-v.1": {
+                "title": "My Portfolio",
+                "subtitle": "Version 1",
+                "description": "My first portfolio website built with HTML, CSS, and JavaScript to showcase my projects and skills.",
+                "longDescription": ""
+            },
+            "portfolio-other": {
+                "title": "Portfolio",
+                "subtitle": "Otter-Solution",
+                "description": "Portfolio website for Otter-Solution, a software development company specializing in web and mobile applications.",
+                "longDescription": ""
+            },
+            "sassa": {
+                "title": "Sassa",
+                "subtitle": "Financial App",
+                "description": "Landing page for a financial application called Sassa.",
+                "longDescription": ""
+            },
+            "tattoo": {
+                "title": "Tattoo",
+                "subtitle": "Sizer",
+                "description": "Website to help tattoo artists print tattoo stencil templates",
+                "longDescription": ""
+            },
+            "another": {
+                "title": "Another_",
+                "subtitle": "Project",
+                "description": "",
+                "longDescription": ""
+            }
+        }
+    },
+    "footer": {
+        "connectWithMe": "Let's Connect",
+        "rightsReserved": "All rights reserved."
+    }
+}
