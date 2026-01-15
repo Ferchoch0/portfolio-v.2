@@ -15,7 +15,7 @@
     "about": {
         "titleSmall": "Sobre mí",
         "titleBig": "soy <span>Delvalle Fernando</span>",
-        "quote": "“El mejor modo de <span>predecir</span> el futuro es <span>crearlo</span>.”",
+        "quote": "“El mejor modo de <span>predecir</span> el futuro es <span>crearlo</span>.“",
         "description": "Un desarrollador de software con pasión por la tecnología y la innovación. Me gusta crear soluciones prácticas, eficientes y escalables, siempre pensando en cómo mejorar la experiencia de las personas que las usan. Me motiva enfrentar nuevos retos, optimizar procesos y mantenerme en aprendizaje constante para seguir creciendo tanto en lo técnico como en lo creativo."
     },
     "skills": {
@@ -28,64 +28,175 @@
         "moreDetails": "Más Detalles",
         "projects": {
             "otter": {
-                "title": "Otter",
-                "subtitle": "Task",
-                "description": "TaskForge+ es una aplicación web creada para ayudar a los usuarios a organizar y gestionar su negocio de forma eficiente. Permite registrar stock, ventas y compras, entre otras funciones. Utiliza una base de datos MySQL con PHP y sigue el modelo MVC para mantener un código limpio y escalable.",
-                "longDescription": ""
+                "title": "Otter Task",
+                "subtitle": "v.1 - Panel MVC",
+                "description": "Sistema de gestión empresarial para organizar stock, ventas y compras. Desarrollado con PHP y MySQL siguiendo arquitectura MVC. Desplegado en infraestructura propia con Nginx y Ngrok para desarrollo colaborativo.",
+                "longDescription": "",
+                "year": "2024-2025",
+                "duration": "2 meses",
+                "collaborators": "",
+                "role": "Desarrollador Full Stack",
+                "features": [
+                    "Sistema de gestión de tareas",
+                    "Panel administrativo",
+                    "Gestión de usuarios"
+                ]
+            },
+            "otter-v2": {
+                "title": "Otter Task",
+                "subtitle": "v.2 - Migración React",
+                "description": "Migración y modernización de Otter Task a arquitectura SPA. Frontend completamente reescrito en React consumiendo API RESTful en PHP. Incluye nuevas funcionalidades: generación de tickets, sistema de QR, modal de ventas mejorado y flujos más profesionales. Desplegado en infraestructura propia con Nginx y Ngrok.",
+                "longDescription": "",
+                "year": "2025-2026",
+                "duration": "3 meses",
+                "collaborators": "2 colaboradores",
+                "role": "Desarrollador Full Stack",
+                "features": [
+                    "Migración a React",
+                    "Interfaz de usuario moderna",
+                    "Consumo de API RESTful",
+                    "Nuevas funcionalidades avanzadas"
+                ]
             },
             "cpa": {
-                "title": "CPA",
-                "subtitle": "Panel",
-                "description": "Panel de control para la administracion de la app movil de CPA Refrigeracion",
-                "longDescription": ""
+                "title": "CPA Refrigeración",
+                "subtitle": "Panel + App Mobile",
+                "description": "Sistema integral con app móvil para técnicos de refrigeración y panel de administración web. Permite registrar visitas técnicas, estado de equipos, incidencias y generar reportes. Desarrollado en equipo, liderando la implementación técnica del frontend en React integrado con API REST en PHP. Desplegado en infraestructura propia.",
+                "longDescription": "",
+                "year": "2025",
+                "duration": "2 meses",
+                "collaborators": "1 colaborador",
+                "role": "Desarrollador Full Stack",
+                "features": [
+                    "Panel administrativo web",
+                    "App móvil nativa",
+                    "Registro de visitas técnicas",
+                    "Generación de reportes"
+                ]
+            },
+            "cpa-desinfeccion": {
+                "title": "CPA Desinfección",
+                "subtitle": "Soporte Legacy Angular",
+                "description": "Mantenimiento y evolución de sistema legacy (5 años) con app móvil y panel web en Angular, y API en Node.js. Actualización de librerías obsoletas, corrección de bugs críticos, implementación de nuevas funcionalidades y refactorización de módulos completos. Trabajo en equipo actuando como tech lead.",
+                "longDescription": "",
+                "year": "2025",
+                "duration": "1 mes",
+                "collaborators": "1 colaborador",
+                "role": "Desarrollador Full Stack",
+                "features": [
+                    "Mantenimiento de sistema legacy",
+                    "Actualización de librerías",
+                    "Implementación de nuevas funcionalidades",
+                    "Refactorización de módulos"
+                ]
             },
             "mottoso": {
-                "title": "Mottoso",
-                "subtitle": "Propiedades",
-                "description": "Pagina web de para una inmobiliaria local en San Clemente del Tuyú, Argentina",
-                "longDescription": ""
+                "title": "Mottoso Propiedades",
+                "subtitle": "Inmobiliaria Integral",
+                "description": "Plataforma inmobiliaria completa con catálogo de propiedades para compra y alquiler, sistema de tasaciones, integración de mapas interactivos, formularios de contacto y panel de administración. Desarrollado en equipo con React y PHP. Desplegado en infraestructura propia con Nginx.",
+                "longDescription": "",
+                "year": "2025",
+                "duration": "1 meses",
+                "collaborators": "1 colaborador",
+                "role": "Desarrollador Full Stack",
+                "features": [
+                    "Catálogo de propiedades",
+                    "Sistema de tasaciones",
+                    "Mapas interactivos",
+                    "Panel administrativo"
+                ]
             },
             "beretta": {
-                "title": "Beretta",
-                "subtitle": "Control Panel",
-                "description": "Panel de control para la gestión interna de la logica y transporte de una empresa de cargas",
-                "longDescription": ""
+                "title": "Beretta Logística",
+                "subtitle": "Control de Transporte",
+                "description": "Panel de control logístico para empresa de transporte de cargas. Gestión de flota vehicular, historial de mantenimiento, planificación de rutas, control de combustible, administración de empleados y sistema de roles de acceso. Desarrollado en equipo con React, PHP y Tailwind CSS. Lideré la arquitectura técnica del proyecto.",
+                "longDescription": "",
+                "year": "2025",
+                "duration": "1 mes",
+                "collaborators": "1 colaborador",
+                "role": "Desarrollador Frontend",
+                "features": [
+                    "Gestión de flota vehicular",
+                    "Planificación de rutas",
+                    "Control de combustible",
+                    "Sistema de roles de acceso"
+                ]
             },
             "tateti": {
                 "title": "Ta-Te-Ti",
-                "subtitle": "Game",
-                "description": "Videojuego clásico de Ta-Te-Ti desarrollado con React. Con una interfaz intuitiva y atractiva.",
-                "longDescription": ""
+                "subtitle": "Juego Clásico",
+                "description": "Implementación del clásico juego de tres en raya con interfaz moderna y animaciones fluidas. Desarrollado en React para practicar gestión de estado y lógica de juego.",
+                "longDescription": "",
+                "year": "2024",
+                "duration": "1 semana",
+                "collaborators": "",
+                "role": "Desarrollador Frontend",
+                "features": [
+                    "Interfaz moderna",
+                    "Animaciones fluidas",
+                    "Gestión de estado"
+                ]
             },
             "portfolio-v.1": {
-                "title": "mi Portfolio",
-                "subtitle": "Version 1",
-                "description": "Mi primer portafolio personal desarrollado con React y CSS.",
-                "longDescription": ""
+                "title": "Portfolio Personal",
+                "subtitle": "Primera Versión",
+                "description": "Mi primer portfolio personal desarrollado en React. Proyecto de aprendizaje que me permitió experimentar con animaciones y efectos visuales, aunque presentaba problemas de rendimiento que motivaron esta nueva versión que estás viendo.",
+                "longDescription": "",
+                "year": "2024",
+                "duration": "2 semanas",
+                "collaborators": "",
+                "role": "Desarrollador Frontend",
+                "features": [
+                    "Animaciones y efectos visuales",
+                    "Diseño responsivo",
+                    "Presentación de proyectos"
+                ]
             },
-            "portfolio-other": {
-                "title": "Portfolio",
-                "subtitle": "Otter-Solution",
-                "description": "Portfolio corporativo de Otter-Solution, una empresa emergente de desarrollo de software.",
-                "longDescription": ""
+            "otter-solutions": {
+                "title": "Otter Solutions",
+                "subtitle": "Portfolio Corporativo",
+                "description": "Portfolio profesional de Otter Solutions, equipo de desarrollo de software donde actúo como tech lead y desarrollador. Sitio diseñado para mostrar nuestros servicios y proyectos colaborativos. Desarrollado en React con diseño moderno y responsivo.",
+                "longDescription": "",
+                "year": "2025",
+                "duration": "2 semanas",
+                "collaborators": "1 colaborador",
+                "role": "Desarrollador Frontend",
+                "features": [
+                    "Diseño moderno y responsivo",
+                    "Presentación de servicios",
+                    "Proyectos colaborativos"
+                ]
+
             },
             "sassa": {
                 "title": "Sassa",
-                "subtitle": "App Financiera",
-                "description": "Landing page publicitaria de una aplicación financiera llamada Sassa.",
-                "longDescription": ""
+                "subtitle": "Landing Page Financiera",
+                "description": "Landing page promocional para aplicación financiera. Desarrollada con WordPress y Elementor, enfocada en conversión y diseño visual atractivo.",
+                "longDescription": "",
+                "year": "2024",
+                "duration": "1 semana",
+                "collaborators": "",
+                "role": "Desarrollador Frontend",
+                "features": [
+                    "Diseño visual atractivo",
+                    "Optimización para conversión",
+                    "Desarrollo con WordPress y Elementor"
+                ]
             },
             "tattoo": {
-                "title": "Tattoo",
-                "subtitle": "Sizer",
-                "description": "Sitio web para ayudar a los tatuadores en la impresion de las plantillas de tatuajes",
-                "longDescription": ""
-            },
-            "another": {
-                "title": "Otro_",
-                "subtitle": "Proyecto",
-                "description": "Proyecto extra disponible solo en el menú",
-                "longDescription": ""
+                "title": "Tattoo Sizer",
+                "subtitle": "Herramienta para Tatuadores",
+                "description": "Aplicación web para tatuadores que facilita la impresión de plantillas. Permite agrupar múltiples imágenes en formato A4 y ajustar dimensiones basándose en 300 DPI. Desarrollada con JavaScript vanilla y Canvas API. Uno de mis primeros proyectos comerciales.",
+                "longDescription": "",
+                "year": "2024",
+                "duration": "2 semanas",
+                "collaborators": "",
+                "role": "Desarrollador Frontend",
+                "features": [
+                    "Agrupación de imágenes",
+                    "Ajuste de dimensiones",
+                    "Impresión en formato A4"
+                ]
             }
         }
     },

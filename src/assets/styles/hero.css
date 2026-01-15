@@ -136,6 +136,8 @@
   transform: scale(1.05);
 }
 
+
+
 /* ====== Responsive ====== */
 @media (max-width: 900px) {
   .fd-hero--container.cinematic {

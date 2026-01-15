@@ -173,14 +173,14 @@
     }
 }
 
-
+/* Modal de detalles mejorado */
 .fd-work--detail {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.85);
+    background: rgba(0, 0, 0, 0.92);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -188,65 +188,251 @@
     overflow: hidden;
     padding: 2rem;
     box-sizing: border-box;
+    backdrop-filter: blur(8px);
 }
 
 .fd-work--details-container {
     position: relative;
-    width: 90%;
+    width: 95%;
+    max-width: 1400px;
     height: 90%;
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 40px rgba(145, 112, 50, 0.3);
+    display: grid;
+    grid-template-columns: 45% 55%;
+    background: #0d0d0d;
 }
 
-.fd-work--detail-bg {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.7);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    transition: transform 0.6s ease-in-out;
+.fd-work--detail-left {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #0d0d0d;
+    border-right: 1px solid #917032;
+    z-index: 2;
+    overflow-y: hidden;
 }
 
 .fd-work--detail-overlay {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 40%;
-    height: 100%;
-    background: #0d0d0d;
-    color: #eee;
-    padding: 3rem 2rem;
+    padding: 2.5rem 2rem;
     font-family: "Cinzel", serif;
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
-    z-index: 2;
-    opacity: 0;
-    animation: slideOverlay 0.6s ease forwards;
-    animation-delay: 1s;
-    /* aparece un segundo después */
-    box-sizing: border-box;
+    color: #eee;
 }
 
-@keyframes slideOverlay {
+.fd-work--detail-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #050505;
+    overflow: hidden;
+}
+
+.fd-work--gallery {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fd-work--gallery-main {
+    position: relative;
+    width: 90%;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fd-work--gallery-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    animation: fadeInImage 0.3s ease;
+}
+
+/* Metadata del proyecto */
+.fd-work--metadata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.fd-work--meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #888;
+}
+
+.fd-work--meta-item svg {
+    flex-shrink: 0;
+}
+
+/* Features/Características */
+.fd-work--features {
+    margin: 1.5rem 0;
+}
+
+.fd-work--features h3 {
+    font-size: 1rem;
+    margin-bottom: 0.75rem;
+    color: #fff;
+}
+
+.fd-work--features ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.fd-work--features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.fd-work--features li svg {
+    flex-shrink: 0;
+    color: #4CAF50;
+}
+
+@keyframes fadeInImage {
+    from {
+        opacity: 0;
+    }
     to {
-        left: 0;
         opacity: 1;
     }
 }
 
+.fd-work--gallery-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(145, 112, 50, 0.8);
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.fd-work--gallery-nav:hover {
+    background: rgba(145, 112, 50, 1);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.fd-work--gallery-nav.prev {
+    left: 20px;
+}
+
+.fd-work--gallery-nav.next {
+    right: 20px;
+}
+
+.fd-work--gallery-thumbs {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+    padding: 12px 20px;
+    background: rgba(13, 13, 13, 0.9);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    max-width: 90%;
+    overflow-x: auto;
+}
+
+.fd-work--gallery-thumbs::-webkit-scrollbar {
+    height: 4px;
+}
+
+.fd-work--gallery-thumbs::-webkit-scrollbar-thumb {
+    background: #917032;
+    border-radius: 2px;
+}
+
+.fd-work--gallery-thumb {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    flex-shrink: 0;
+}
+
+.fd-work--gallery-thumb:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.fd-work--gallery-thumb.active {
+    opacity: 1;
+    border-color: #917032;
+}
+
+.fd-work--gallery-counter {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(13, 13, 13, 0.8);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-family: "Cinzel", serif;
+    color: #917032;
+    font-size: 0.9rem;
+}
+
 /* Botón cerrar */
 .fd-work--detail-close {
-    background: none;
-    border: none;
-    font-size: 2rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(145, 112, 50, 0.2);
+    border: 1px solid #917032;
+    font-size: 1.5rem;
     color: #eee;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
     cursor: pointer;
-    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.fd-work--detail-close:hover {
+    background: rgba(145, 112, 50, 0.5);
+    transform: rotate(90deg);
 }
 
 /* Lista de lenguajes */
@@ -262,9 +448,7 @@
 
 .fd-work--langs li {
     background-color: #917032;
-    /* color base: dorado medio */
     color: #fff;
-    /* texto claro para contraste */
     padding: 6px 14px;
     border-radius: 20px;
     font-size: 14px;
@@ -275,12 +459,10 @@
 
 .fd-work--langs li:hover {
     background-color: #eed99f;
-    /* tono más claro al hover */
     color: #111;
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
 }
-
 
 /* Links de GitHub y Demo */
 .fd-work--links {
@@ -304,7 +486,30 @@
 
 .fd-work--links a:hover {
     border: 1px solid #917032;
-    /* dorado al hover */
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .fd-work--details-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+
+    .fd-work--detail-left {
+        border-right: none;
+        border-bottom: 1px solid #917032;
+        max-height: 40%;
+    }
+
+    .fd-work--gallery-thumbs {
+        gap: 8px;
+        padding: 8px 12px;
+    }
+
+    .fd-work--gallery-thumb {
+        width: 45px;
+        height: 45px;
+    }
 }
