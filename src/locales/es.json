@@ -122,6 +122,21 @@
                     "Sistema de roles de acceso"
                 ]
             },
+            "lithos": {
+                "title": "Lithos",
+                "subtitle": "Tatto Publisher",
+                "description": "Pagina publicitaria para estudio de tatuajes que permite a los clientes conocer mas el estudio y pedir turnos online.",
+                "longDescription": "",
+                "year": "2026",
+                "duration": "2 dias",
+                "collaborators": "",
+                "role": "Desarrollador Full Stack",
+                "features": [
+                    "Muestra de galeria de tatuajes",
+                    "Informacion del estudio",
+                    "Panel para pedir turnos online (via Whatsapp)"
+                ]
+            },
             "tateti": {
                 "title": "Ta-Te-Ti",
                 "subtitle": "Juego Clásico",

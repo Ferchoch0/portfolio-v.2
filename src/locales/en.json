@@ -122,6 +122,21 @@
                     "Access role system"
                 ]
             },
+            "lithos": {
+                "title": "Lithos",
+                "subtitle": "Tattoo Publisher",
+                "description": "Advertising page for a tattoo studio that allows clients to learn more about the studio and book appointments online.",
+                "longDescription": "",
+                "year": "2026",
+                "duration": "2 days",
+                "collaborators": "",
+                "role": "Full Stack Developer",
+                "features": [
+                    "Tattoo gallery showcase",
+                    "Studio information",
+                    "Online appointment booking panel (via WhatsApp)"
+                ]
+            },
             "tateti": {
                 "title": "Tic-Tac-Toe",
                 "subtitle": "Classic Game",
