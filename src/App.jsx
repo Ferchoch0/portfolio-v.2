@@ -1,35 +1,24 @@
-import { useState, useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import TVNoise from "./components/NoiseBackground";
+import ScrollToTop from "./components/ScrollToTop";
+import { ReactLenis } from 'lenis/react';
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
 import FooterScreen from "./components/footer";
-import Hourglass from "./components/Hourglass";
+import SmoothLoader from "./components/SmoothLoader";
+import AppRoutes from "./routes/AppRoutes";
 import "./i18n";
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 2500);
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return <Hourglass />;
-  }
-
   return (
-    <>
-      <TVNoise />
-      <Navbar />
-      <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-      </div>
-      <FooterScreen />
-    </>
+    <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
+      <>
+        <ScrollToTop />
+        <SmoothLoader />
+        <Navbar />
+        <div className="container">
+          <AppRoutes />
+        </div>
+        <FooterScreen />
+      </>
+    </ReactLenis>
   );
 }
 

@@ -1,206 +1,370 @@
 /* ===========================
-   NAVBAR BASE (horizontal arriba)
+   NAVBAR LETTA REDESIGN
 =========================== */
-.nav-container {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background: transparent;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2rem;
-  z-index: 10;
-  transition: all 0.3s ease;
-}
-
-.nav-glass {
+.nav-letta {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
-  background: transparent;
-  z-index: 5;
+  height: 64px;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Ghost border style */
+  font-family: var(--font-body); 
+  color: var(--text-muted); 
+  transition: background-color 0.3s ease;
+}
+
+.nav-letta.scrolled {
+  background-color: #000000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.nav-letta-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-/* ===========================
-   LOGO
-=========================== */
-.nav-logo {
-  display: flex;
-  align-items: center;
-  color: #eee;
-  font-size: 1.25rem;
-  font-family: "Cinzel", serif;
-}
-
-.nav-logo-1 {
-  font-weight: 600;
-  color: #917032;
-}
-
-.nav-logo-2 {
-  font-weight: 800;
-  margin: 0px 8px;
-}
-
-/* ===========================
-   LINKS
-=========================== */
-.nav-links {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 2rem;
-  list-style: none;
-  padding: 0;
+  height: 100%;
+  max-width: 100%;
   margin: 0;
-  cursor: pointer;
-
+  align-items: center;
+  justify-content: space-between;
 }
 
-.nav-links li {
+/* LOGO */
+.nav-letta-logo {
   display: flex;
-  transition: all 0.3s ease;
+  align-items: center;
+  height: 100%;
+  padding: 0 1.5rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-color);
+  font-size: 1.15rem;
+  font-family: var(--font-display);
+  user-select: none;
+  min-width: max-content;
+}
+
+.nav-letta-logo .nav-logo-1 { font-family: var(--font-ruiga); color: var(--primary-color); }
+.nav-letta-logo .nav-logo-2 { font-family: var(--font-ruiga); font-weight: 800; margin: 0 6px; }
+
+/* LINKS CENTER */
+.nav-letta-center {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-letta-links {
+  display: flex;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-letta-item {
   position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
-.nav-links li a {
-  font-weight: 400;
-  font-size: 1rem;
-  font-family: "Alumni Sans Pinstripe", sans-serif;
+.nav-letta-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-color);
+}
+
+.letta-scroll-link, .nav-dropdown-trigger {
+  padding: 0 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 100%;
   text-decoration: none;
-  color: #ffffff;
-  transition: transform 0.3s ease-in, color 0.3s ease;
-  writing-mode: horizontal-tb;
-  /* enlaces horizontales */
-  rotate: 0deg;
+  color: inherit;
+  cursor: pointer;
+  font-family: var(--font-manrope);
 }
 
-.nav-line {
-  width: 1px;
-  height: 40px;
-  /* ajustado para horizontal */
-  background-color: rgba(255, 255, 255, 0.3);
-  margin: 0 1rem;
+.nav-dropdown-trigger .chevron {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
 }
 
-/* ===========================
-   ESTADOS (hover, active)
-=========================== */
-.nav-links li:hover {
-  text-decoration: underline;
+.nav-letta-item:hover .chevron {
+  transform: rotate(180deg);
 }
 
-.nav-links li a:hover {
-  transform: scale(1.05);
+/* DROPDOWN MENU */
+.nav-letta-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 320px;
+  background: var(--surface-container-high);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-5px);
+  transition: all 0.2s ease;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  display: flex;
+  flex-direction: column;
 }
 
-.nav-links svg {
-  width: 1.2rem;
-  height: 1.2rem;
-  fill: currentColor;
-  vertical-align: middle;
+/* Modifier para el selector de lenguaje ya que es más angosto */
+.nav-letta-dropdown.lang-dropdown {
+  width: 150px;
 }
 
-/* ===========================
-   MENU TOGGLE (para responsive)
-=========================== */
+.has-dropdown:hover .nav-letta-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-panel-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  text-decoration: none;
+  color: var(--text-muted);
+  background: transparent;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  transition: all 0.2s ease;
+  gap: 1rem;
+  cursor: pointer;
+  text-align: left;
+}
+
+.dropdown-panel-item:last-child {
+  border-bottom: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+.dropdown-panel-item:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-color);
+}
+
+.dp-item-icon {
+  margin-top: 0.15rem;
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.dp-item-text {
+  flex: 1;
+}
+
+.dp-item-text h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-color);
+  font-family: var(--font-inter);
+}
+
+.dp-item-text p {
+  margin: 0;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--text-inverted-muted);
+}
+
+.dp-item-arrow {
+  margin-top: 0.25rem;
+  font-size: 0.8rem;
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.2s ease;
+  color: var(--text-color);
+}
+
+.dropdown-panel-item:hover .dp-item-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* RIGHT ACTIONS */
+.nav-letta-actions {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+.action-link-icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 100%;
+  padding: 0 1.25rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: var(--font-manrope);
+  transition: all 0.2s ease;
+}
+
+.action-link-icon:hover {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-color);
+}
+
+.nav-lang-letta {
+  height: 100%;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+}
+
+.btn-letta {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  font-family: var(--font-manrope);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-letta.outline {
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-color);
+  background: transparent;
+}
+
+.btn-letta.outline:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.btn-letta.solid {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+}
+
+.btn-letta.solid:hover {
+  opacity: 0.9;
+  filter: brightness(1.1);
+}
+
+/* MOBILE RESPONSIVE */
 .menu-toggle {
   display: none;
-  font-size: 2rem;
-  color: #fff;
+  font-size: 1.2rem;
+  color: var(--text-muted);
   cursor: pointer;
-  z-index: 1100;
+  padding: 0 1.5rem;
+  height: 100%;
+  align-items: center;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  transition: color 0.2s ease;
 }
 
-.nav-lang select {
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border: 1px solid #fff;
-  border-radius: 6px;
-  padding: 0.3rem 0.6rem;
-  cursor: pointer;
-  font-family: "Alumni Sans Pinstripe", sans-serif;
-  font-size: 0.85rem;
-  transition: all 0.3s ease;
+.menu-toggle:hover {
+  color: var(--text-color);
 }
 
-.nav-lang option {
-  color: #181818;
-}
-
-.nav-lang select:hover {
-  background: rgba(255, 255, 255, 0.2);
-}
-
-.nav-lang select:focus {
-  outline: none;
-  box-shadow: 0 0 5px rgba(255,255,255,0.5);
-}
-
-
-/* ===========================
-   RESPONSIVE
-=========================== */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 80px;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem 0;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    pointer-events: none;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    transition: all 0.35s ease;
-  }
-
-  .nav-links.open {
-    max-height: 600px;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .nav-links li a {
-    font-size: 1.2rem;
-    writing-mode: horizontal-tb;
-    rotate: 0deg;
-  }
-
-  .nav-line {
+@media (max-width: 1024px) {
+  .nav-letta-actions .action-link-text {
     display: none;
-    /* ocultar línea en móvil */
+  }
+}
+
+@media (max-width: 860px) {
+  .nav-letta-container {
+    justify-content: space-between;
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .nav-letta-center {
+    position: absolute;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: var(--bg-color);
+    flex-direction: column;
+    align-items: stretch;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: -1;
+  }
+  
+  .nav-letta-center.open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-letta-links {
+    flex-direction: column;
+    height: auto;
+  }
+  
+  .nav-letta-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    height: auto;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .letta-scroll-link, .nav-dropdown-trigger {
+    padding: 1.25rem 1.5rem;
+    width: 100%;
+  }
+  
+  .nav-letta-dropdown {
+    position: relative;
+    top: 0;
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    background: var(--surface-container-high);
+    display: none;
+  }
+  
+  .has-dropdown:hover .nav-letta-dropdown {
+    display: flex;
+  }
+
+  .btn-letta.solid {
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
-  #logo {
-    height: 45px !important;
+  .btn-letta.outline {
+    display:none;
   }
-
-  .nav-glass {
-    padding: 0.6rem 1rem;
-  }
-
-  .nav-links li a {
-    font-size: 1rem;
+  .action-link-icon {
+    display:none;
   }
 }

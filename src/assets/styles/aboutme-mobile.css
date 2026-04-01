@@ -1,0 +1,64 @@
+/* ═══════════════════════════════════════════════════════
+   About Me MOBILE — Vertically stacked panels, no GSAP
+   ═══════════════════════════════════════════════════════ */
+
+.fd-about-m {
+    position: relative;
+    background: linear-gradient(to bottom,
+            var(--rock-color) 0%,
+            var(--bg-color) 12vh,
+            var(--bg-color) 100%);
+    color: var(--text-color);
+    padding: 4rem 1.5rem 3rem 1.5rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Subtle F watermark */
+.fd-about-m--f-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60vw;
+    max-width: 300px;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.fd-about-m--svg {
+    width: 100%;
+    height: auto;
+}
+
+.fd-about-m--panel {
+    position: relative;
+    z-index: 5;
+    padding: 2.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.fd-about-m--panel:last-child {
+    border-bottom: none;
+}
+
+.fd-about-m--title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 8vw, 3rem);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin: 0 0 1rem 0;
+    color: var(--text-color);
+}
+
+.fd-about-m--text {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+}

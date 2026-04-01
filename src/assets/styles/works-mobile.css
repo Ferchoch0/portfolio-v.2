@@ -1,0 +1,111 @@
+/* ═══════════════════════════════════════════════════════
+   Works MOBILE — Project cards with thumbnails, no GSAP
+   ═══════════════════════════════════════════════════════ */
+
+.fd-works-m {
+    width: 100%;
+    background-color: var(--bg-inverted-color, #f9f9fb);
+    color: var(--text-inverted-color, #1a1c1d);
+    padding: 3.5rem 1.5rem;
+    box-sizing: border-box;
+}
+
+.fd-works-m--title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+    margin: 0 0 2rem 0;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+.fd-works-m--list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.fd-works-m--card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(128, 128, 128, 0.12);
+    transition: transform 0.2s ease;
+}
+
+.fd-works-m--card:active {
+    transform: scale(0.98);
+}
+
+.fd-works-m--img-wrap {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: rgba(128, 128, 128, 0.08);
+}
+
+.fd-works-m--img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.fd-works-m--info {
+    padding: 1rem 1.25rem;
+}
+
+.fd-works-m--num {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 0.8rem;
+    opacity: 0.35;
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+.fd-works-m--card-title {
+    font-family: var(--font-manrope);
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.25rem 0;
+    line-height: 1.2;
+}
+
+.fd-works-m--cat {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.5;
+}
+
+/* Footer */
+.fd-works-m--footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+.fd-works-m--view-all {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-family: var(--font-manrope);
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    border-bottom: 2px solid currentColor;
+    padding: 0.25rem 0;
+}

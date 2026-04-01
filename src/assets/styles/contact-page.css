@@ -1,0 +1,219 @@
+.fd-contact-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 15vh 0 10vh 0;
+    background-color: var(--surface-bright); /* Light mode by default for input legibility */
+    color: var(--text-inverted-color);
+}
+
+.fd-contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.fd-contact-header {
+    margin-bottom: 5rem;
+}
+
+.fd-contact-title {
+    font-family: var(--font-manrope);
+    font-weight: 800;
+    font-size: clamp(3.5rem, 8vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    margin: 0 0 1.5rem 0;
+    color: var(--text-inverted-color);
+}
+
+.fd-contact-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    color: var(--text-inverted-muted);
+    max-width: 600px;
+    line-height: 1.5;
+}
+
+.fd-contact-subtitle a {
+    color: var(--primary-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--primary-color);
+    padding-bottom: 2px;
+}
+
+/* ── Split Layout ── */
+.fd-contact-split {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+@media (min-width: 900px) {
+    .fd-contact-split {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/* Left: Info */
+.fd-contact-info {
+    flex: 1;
+    max-width: 350px;
+}
+
+.contact-item {
+    margin-bottom: 3rem;
+}
+
+.contact-item h3 {
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    color: var(--text-inverted-muted);
+    margin-bottom: 1rem;
+}
+
+.contact-item p {
+    font-family: var(--font-manrope);
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.contact-item ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-item ul li {
+    margin-bottom: 0.75rem;
+}
+
+.contact-item ul li a {
+    font-family: var(--font-manrope);
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.contact-item ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Right: Form */
+.fd-contact-form-wrapper {
+    flex: 2;
+    max-width: 700px;
+}
+
+.fd-contact-form .form-group {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.fd-contact-form label {
+    display: block;
+    font-family: var(--font-manrope);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-inverted-color);
+    letter-spacing: -0.02em;
+}
+
+.fd-contact-form input,
+.fd-contact-form textarea {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    font-family: var(--font-body);
+    font-size: 1.25rem;
+    color: var(--text-inverted-color);
+    outline: none;
+    transition: border-color 0.4s;
+    resize: none;
+}
+
+.fd-contact-form input::placeholder,
+.fd-contact-form textarea::placeholder {
+    color: rgba(0,0,0,0.2);
+}
+
+.fd-contact-form input:focus,
+.fd-contact-form textarea:focus {
+    border-bottom-color: var(--primary-color);
+}
+
+.fd-contact-submit {
+    margin-top: 1rem;
+    background: transparent;
+    border: 2px solid var(--text-inverted-color);
+    color: var(--text-inverted-color);
+    padding: 1.25rem 3rem;
+    border-radius: var(--radius-full);
+    font-family: var(--font-manrope);
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.fd-contact-submit:hover {
+    background: var(--text-inverted-color);
+    color: var(--surface-bright);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -5px rgba(0,0,0,0.2);
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Mobile (768px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+    .fd-contact-page {
+        padding: 10vh 0 6vh 0;
+    }
+
+    .fd-contact-container {
+        padding: 0 1.5rem;
+    }
+
+    .fd-contact-header {
+        margin-bottom: 3rem;
+    }
+
+    .fd-contact-title {
+        font-size: clamp(2.5rem, 10vw, 4rem);
+    }
+
+    .fd-contact-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .fd-contact-info {
+        max-width: 100%;
+    }
+
+    .fd-contact-form .form-group {
+        margin-bottom: 2rem;
+    }
+
+    .fd-contact-form label {
+        font-size: clamp(1.2rem, 5vw, 1.8rem);
+    }
+
+    .fd-contact-form input,
+    .fd-contact-form textarea {
+        font-size: 1.1rem;
+    }
+
+    .fd-contact-submit {
+        width: 100%;
+        padding: 1rem 2rem;
+    }
+}

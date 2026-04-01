@@ -1,61 +1,98 @@
 .fd-footer {
-    background: #000; /* fondo negro */
-    color: #fff;
-    text-align: center;
-    padding: 3rem 1rem;
+    width: 100%;
+    padding: var(--spacing-20) 0;
+    background-color: var(--rock-color);
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    font-family: 'Alumni Sans Pinstripe', sans-serif;
+    justify-content: center;
 }
 
-.fd-footer--top {
+.fd-footer--container {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
-.fd-footer--title {
-    font-family: "Cinzel", serif;
-    font-weight: 700;
-    font-size: 1.8rem;
-    color: #eed99f;
+@media (min-width: 768px) {
+    .fd-footer--container {
+        flex-direction: row;
+        gap: 0;
+    }
 }
 
-.fd-footer--socials {
+.fd-footer--left {
     display: flex;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 0.75rem;
 }
 
-.fd-footer--socials a {
-    color: #fff;
-    font-size: 1.5rem;
-    transition: color 0.3s ease, transform 0.3s ease;
+.fd-footer--logo {
+    font-family: var(--font-manrope);
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--text-color);
 }
 
-.fd-footer--socials a:hover {
-    color: #eed99f;
-    transform: translateY(-3px);
+.fd-footer--separator {
+    color: var(--surface-container-high);
 }
 
-.fd-footer--lang-select {
-    margin-top: 1rem;
-    padding: 0.4rem 0.8rem;
-    background: #111;
-    color: #fff;
-    border: 1px solid #eed99f;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 500;
+.fd-footer--copyright {
+    font-family: var(--font-inter);
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
 }
 
-.fd-footer--lang-select option {
-    background: #111;
-    color: #fff;
+.fd-footer--right {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
 }
 
-.fd-footer--bottom {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.7);
+.fd-footer--link {
+    font-family: var(--font-inter);
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.fd-footer--link:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .fd-footer {
+        padding: 3rem 0;
+    }
+
+    .fd-footer--container {
+        padding: 0 1.5rem;
+        text-align: center;
+    }
+
+    .fd-footer--left {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .fd-footer--separator {
+        display: none;
+    }
+
+    .fd-footer--right {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }

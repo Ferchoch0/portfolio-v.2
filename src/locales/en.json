@@ -4,28 +4,90 @@
         "toMy": "to my",
         "portfolio": "Portfolio",
         "name": "Delvalle Fernando",
-        "downloadCV": "Download CV"
+        "downloadCV": "Download CV",
+        "badge_freelance": "Available for freelance",
+        "badge_role": "Software Engineer & Creative Developer",
+        "desc_1": "I build products with real depth.",
+        "desc_2": "I lead a freelance team where technical criteria <br className=\"fd-hero--br\" /> matters as much as business vision.",
+        "utterlyButton": "Visit Utterly",
+        "contactButton": "Let's talk about your project",
+        "services": {
+            "web": "Web",
+            "mobile": "Mobile",
+            "backend": "Backend",
+            "apis": "APIs",
+            "focus": "Focus"
+        }
     },
     "navbar": {
         "home": "Home",
         "about": "About Me",
         "skills": "Skills",
-        "works": "Works"
+        "works": "Works",
+        "dropdown": {
+            "web_architecture_title": "Web Architecture",
+            "web_architecture_desc": "React/Next.js frontend applications",
+            "mobile_engineering_title": "Mobile Engineering",
+            "mobile_engineering_desc": "Cross-platform React Native apps",
+            "backend_systems_title": "Backend Systems",
+            "backend_systems_desc": "Scalable APIs and architectures"
+        },
+        "contact": "Contact",
+        "resume": "Resume"
     },
     "about": {
         "titleSmall": "About Me",
         "titleBig": "I am <span>Delvalle Fernando</span>",
-        "quote": "“The best way to <span>predict</span> the future is to <span>create</span> it.“",
-        "description": "A software developer with a passion for technology and innovation. I like creating practical, efficient, and scalable solutions, always thinking about improving the user experience. I'm motivated by facing new challenges, optimizing processes, and continuously learning to grow both technically and creatively."
+        "quote": "\"The best way to <span>predict</span> the future is to <span>create</span> it.\"",
+        "description": "A software developer with a passion for technology and innovation. I enjoy building practical, efficient, and scalable solutions, always focused on improving the experience of the people who use them. I'm driven by new challenges, process optimization, and continuous learning — growing both technically and creatively.",
+        "title_1": "Utterly & Leadership",
+        "text_1": "Founder and Tech Lead of Utterly, my own development team. I'm involved in the entire lifecycle: from planning, interviews, documentation, and design, to Full Stack development and production deployment.",
+        "title_2": "Own Infrastructure",
+        "text_2": "I manage and operate my own server. Having this infrastructure allows me to spin up agile demo environments and maintain a constant, direct workflow and communication channel with my team.",
+        "title_3": "Holistic Mindset",
+        "text_3": "I bring a product-oriented mindset focused on delivering business value at a technological level for new clients, while also offering the engineering rigor and corporate software practices needed to integrate meaningfully into enterprise environments."
     },
     "skills": {
         "title": "Skills",
         "description": "Technologies, tools, and languages I use in real projects."
     },
+    "services": {
+        "header_title": "Services & Expertise",
+        "p1_title": "Frontend Engineering",
+        "p1_desc": "Building resilient, interactive user interfaces using React, Next.js, and modern CSS architecture. Focus on performance, accessibility (a11y), and pixel-perfect implementation of complex design systems.",
+        "p2_title": "Backend & Architecture",
+        "p2_desc": "Designing scalable microservices and robust REST/GraphQL APIs. Leveraging Node.js, PHP, and relational databases to ensure data integrity and seamless communication between services.",
+        "p3_title": "Creative Development",
+        "p3_desc": "Bridging the gap between design and engineering. Deeply experienced in crafting highly immersive web experiences using GSAP, Framer Motion, and WebGL for standout marketing pages.",
+        "p4_title": "Desktop & Mobile",
+        "p4_desc": "Building cross-platform applications with native-level performance for both mobile devices and desktop environments.",
+        "p5_title": "Learning",
+        "p5_desc": "Technologies I'm actively expanding my expertise in. Constantly pushing to broaden my stack and stay at the cutting edge of modern development."
+    },
+    "cta": {
+        "headline_1": "Let's build the",
+        "headline_2": "future together.",
+        "subtitle": "Currently available for freelance opportunities and leadership roles.",
+        "button": "Get in Touch"
+    },
     "works": {
         "title": "Selected Works",
         "moreProjects": "More Projects",
         "moreDetails": "More Details",
+        "goBack": "Go Back",
+        "viewDemo": "View Demo",
+        "viewCode": "View Code",
+        "prevProject": "Previous",
+        "nextProject": "Next",
+        "projectNotFound": "Project not found",
+        "meta": {
+            "role": "Role",
+            "year": "Year",
+            "duration": "Duration",
+            "team": "Team",
+            "stack": "Stack",
+            "features": "Features"
+        },
         "projects": {
             "otter": {
                 "title": "Otter Task",
@@ -45,7 +107,7 @@
             "otter-v2": {
                 "title": "Otter Task",
                 "subtitle": "v.2 - React Migration",
-                "description": "Migration and modernization of Otter Task to SPA architecture. Frontend completely rewritten in React consuming RESTful API in PHP. Includes new features: ticket generation, QR system, improved sales modal, and more professional workflows. Deployed on custom infrastructure with Nginx and Ngrok.",
+                "description": "Migration and modernization of Otter Task to SPA architecture. Frontend completely rewritten in React consuming a RESTful PHP API. Includes new features: ticket generation, QR system, improved sales modal, and more professional workflows. Deployed on custom infrastructure with Nginx and Ngrok.",
                 "longDescription": "",
                 "year": "2025-2026",
                 "duration": "3 months",
@@ -61,7 +123,7 @@
             "cpa": {
                 "title": "CPA Refrigeration",
                 "subtitle": "Panel + Mobile App",
-                "description": "Comprehensive system with mobile app for refrigeration technicians and web admin panel. Allows recording technical visits, equipment status, incidents, and generating reports. Developed as a team, leading the technical implementation of the React frontend integrated with PHP REST API. Deployed on custom infrastructure.",
+                "description": "Comprehensive system with a mobile app for refrigeration technicians and a web admin panel. Allows recording technical visits, equipment status, incidents, and generating reports. Developed as a team, leading the technical implementation of the React frontend integrated with a PHP REST API. Deployed on custom infrastructure.",
                 "longDescription": "",
                 "year": "2025",
                 "duration": "2 months",
@@ -77,7 +139,7 @@
             "cpa-desinfeccion": {
                 "title": "CPA Disinfection",
                 "subtitle": "Angular Legacy Support",
-                "description": "Maintenance and evolution of legacy system (5 years old) with mobile app and web panel in Angular, and Node.js API. Updated obsolete libraries, fixed critical bugs, implemented new functionalities, and refactored complete modules. Team work acting as tech lead.",
+                "description": "Maintenance and evolution of a 5-year-old legacy system with a mobile app and web panel in Angular, and a Node.js API. Updated obsolete libraries, fixed critical bugs, implemented new features, and refactored complete modules. Team work acting as tech lead.",
                 "longDescription": "",
                 "year": "2025",
                 "duration": "1 month",
@@ -93,7 +155,7 @@
             "mottoso": {
                 "title": "Mottoso Properties",
                 "subtitle": "Full Real Estate Platform",
-                "description": "Complete real estate platform with property catalog for buying and renting, valuation system, interactive map integration, contact forms, and admin panel. Developed as a team with React and PHP. Deployed on custom infrastructure with Nginx.",
+                "description": "Complete real estate platform with a property catalog for buying and renting, valuation system, interactive map integration, contact forms, and admin panel. Developed as a team with React and PHP. Deployed on custom infrastructure with Nginx.",
                 "longDescription": "",
                 "year": "2025",
                 "duration": "1 month",
@@ -109,7 +171,7 @@
             "beretta": {
                 "title": "Beretta Logistics",
                 "subtitle": "Transport Control",
-                "description": "Logistics control panel for freight transport company. Vehicle fleet management, maintenance history, route planning, fuel control, employee administration, and access role system. Developed as a team with React, PHP, and Tailwind CSS. Led the project's technical architecture.",
+                "description": "Logistics control panel for a freight transport company. Vehicle fleet management, maintenance history, route planning, fuel control, employee administration, and access role system. Developed as a team with React, PHP, and Tailwind CSS. Led the project's technical architecture.",
                 "longDescription": "",
                 "year": "2025",
                 "duration": "1 month",
@@ -134,13 +196,13 @@
                 "features": [
                     "Tattoo gallery showcase",
                     "Studio information",
-                    "Online appointment booking panel (via WhatsApp)"
+                    "Online appointment booking (via WhatsApp)"
                 ]
             },
             "tateti": {
                 "title": "Tic-Tac-Toe",
                 "subtitle": "Classic Game",
-                "description": "Implementation of the classic tic-tac-toe game with modern interface and smooth animations. Developed in React to practice state management and game logic.",
+                "description": "Implementation of the classic tic-tac-toe game with a modern interface and smooth animations. Developed in React to practice state management and game logic.",
                 "longDescription": "",
                 "year": "2024",
                 "duration": "1 week",
@@ -155,7 +217,7 @@
             "portfolio-v.1": {
                 "title": "Personal Portfolio",
                 "subtitle": "First Version",
-                "description": "My first personal portfolio developed in React. Learning project that allowed me to experiment with animations and visual effects, though it had performance issues that motivated this new version you're viewing.",
+                "description": "My first personal portfolio developed in React. A learning project that allowed me to experiment with animations and visual effects, though it had performance issues that motivated this new version you're viewing.",
                 "longDescription": "",
                 "year": "2024",
                 "duration": "2 weeks",
@@ -170,7 +232,7 @@
             "otter-solutions": {
                 "title": "Otter Solutions",
                 "subtitle": "Corporate Portfolio",
-                "description": "Professional portfolio for Otter Solutions, a software development team where I act as tech lead and developer. Site designed to showcase our services and collaborative projects. Developed in React with modern and responsive design.",
+                "description": "Professional portfolio for Otter Solutions, a software development team where I act as tech lead and developer. Site designed to showcase our services and collaborative projects. Developed in React with a modern and responsive design.",
                 "longDescription": "",
                 "year": "2025",
                 "duration": "2 weeks",
@@ -200,7 +262,7 @@
             "tattoo": {
                 "title": "Tattoo Sizer",
                 "subtitle": "Tool for Tattoo Artists",
-                "description": "Web application for tattoo artists that facilitates template printing. Allows grouping multiple images in A4 format and adjusting dimensions based on 300 DPI. Developed with vanilla JavaScript and Canvas API. One of my first commercial projects.",
+                "description": "Web application for tattoo artists that simplifies template printing. Allows grouping multiple images in A4 format and adjusting dimensions based on 300 DPI. Developed with vanilla JavaScript and the Canvas API. One of my first commercial projects.",
                 "longDescription": "",
                 "year": "2024",
                 "duration": "2 weeks",

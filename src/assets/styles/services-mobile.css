@@ -1,0 +1,93 @@
+/* ═══════════════════════════════════════════════════════
+   Services MOBILE — Pure vertical layout, zero animations
+   ═══════════════════════════════════════════════════════ */
+
+.fd-services-m {
+    width: 100%;
+    background-color: var(--bg-inverted-color, #f9f9fb);
+    color: var(--text-inverted-color, #1a1c1d);
+    padding: 3.5rem 1.5rem;
+    box-sizing: border-box;
+}
+
+.fd-services-m--title {
+    font-family: var(--font-manrope);
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    margin: 0 0 2rem 0;
+    opacity: 0.5;
+}
+
+.fd-services-m--list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.fd-services-m--card {
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.15);
+}
+
+.fd-services-m--card:last-child {
+    border-bottom: none;
+}
+
+.fd-services-m--num {
+    font-family: var(--font-manrope);
+    font-weight: 300;
+    font-size: 2rem;
+    color: rgba(128, 128, 128, 0.2);
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.fd-services-m--card-title {
+    font-family: var(--font-manrope);
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin: 0 0 0.75rem 0;
+}
+
+.fd-services-m--card-desc {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text-inverted-muted, rgba(0,0,0,0.5));
+    margin: 0 0 1rem 0;
+}
+
+.fd-services-m--techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.fd-services-m--badge {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+    border-radius: 100px;
+    background: transparent;
+}
+
+.fd-services-m--badge-icon {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    opacity: 0.6;
+}
+
+.fd-services-m--badge-name {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 0.02em;
+}

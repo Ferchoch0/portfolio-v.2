@@ -1,9 +1,77 @@
+:root {
+  /* Tonal Hierarchy (Dark Mode / Night) */
+  --rock-color: #0e0e0e; 
+  --bg-color: #141616; 
+  --surface-color: #2f3132;
+  --surface-container-high: #3b3e40;
+  
+  /* Tonal Hierarchy (Light Mode / Paper) */
+  --surface-bright: #ffffff;
+  --bg-inverted-color: #f9f9fb; /* Editorial Off-white */
+  --surface-container-low-light: #f3f3f5;
+  --surface-container-high-light: #e8e8ea;
+  
+  /* Text Accents */
+  --text-color: #f9f9fb;
+  --text-muted: #a1a1aa;
+  --text-inverted-color: #1a1c1d;
+  --text-inverted-muted: #71717a;
+  
+  /* Brand Accents */
+  --primary-color: #8455ef;
+  --secondary-color: #6b38d4;
+
+  /* Spacing Rhythm (0.35rem base) */
+  --spacing-4: 1.4rem;
+  --spacing-8: 2.75rem;
+  --spacing-20: 7rem;
+  --spacing-24: 8.5rem;
+  
+  /* Radii */
+  --radius-md: 0.75rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+  background-color: var(--rock-color);
+  color: var(--text-color);
   overflow-x: hidden;
-  scroll-behavior: smooth;
+  font-family: var(--font-body), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Glassmorphism & Depth Utilities */
+.glass-panel {
+  background: rgba(47, 49, 50, 0.4);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* 2D Gentle Shadows (avoiding excessive 3D) */
+.ambient-shadow {
+  box-shadow: 0 10px 30px -10px rgba(26, 28, 29, 0.04), 0 4px 10px -5px rgba(26, 28, 29, 0.02);
+}
+
+/* Ghost Borders without traditional 1px lines */
+.ghost-border {
+  border: 1px solid rgba(203, 195, 215, 0.15); /* outline_variant at 15% opacity */
+}
+.ghost-border-dark {
+  border: 1px solid rgba(255, 255, 255, 0.08); 
+}
+
+/* Base Typographic helpers */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-manrope);
+  letter-spacing: -0.02em;
 }
 
 .fd-global--name {
@@ -14,7 +82,7 @@ body {
 
 .fd-global--name p {
   font-size: 50rem;
-  font-family: "Cossette Titre", sans-serif;
+  font-family: var(--font-display);
   margin: 0;
   padding: 0;
 }

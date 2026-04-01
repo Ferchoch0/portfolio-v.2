@@ -2,35 +2,97 @@
     "hero": {
         "welcome": "Bienvenido",
         "toMy": "a mi",
-        "portfolio": "Portafolio",
+        "portfolio": "Portfolio",
         "name": "Delvalle Fernando",
-        "downloadCV": "Descargar CV"
+        "downloadCV": "Descargar CV",
+        "badge_freelance": "Disponible para freelance",
+        "badge_role": "Ingeniero de Software & Desarrollador Creativo",
+        "desc_1": "Construyo productos con profundidad real.",
+        "desc_2": "Lidero un equipo freelance donde el criterio técnico <br className=\"fd-hero--br\" /> importa tanto como la visión de negocio.",
+        "utterlyButton": "Visitar Utterly",
+        "contactButton": "Hablemos de tu proyecto",
+        "services": {
+            "web": "Web",
+            "mobile": "Móvil",
+            "backend": "Backend",
+            "apis": "APIs",
+            "focus": "Enfoque"
+        }
     },
     "navbar": {
         "home": "Inicio",
-        "about": "Sobre mí",
+        "about": "Sobre Mí",
         "skills": "Habilidades",
-        "works": "Proyectos"
+        "works": "Proyectos",
+        "dropdown": {
+            "web_architecture_title": "Arquitectura Web",
+            "web_architecture_desc": "Aplicaciones frontend con React/Next.js",
+            "mobile_engineering_title": "Ingeniería Móvil",
+            "mobile_engineering_desc": "Apps cross-platform con React Native",
+            "backend_systems_title": "Sistemas Backend",
+            "backend_systems_desc": "APIs escalables y arquitecturas robustas"
+        },
+        "contact": "Contacto",
+        "resume": "Currículum"
     },
     "about": {
-        "titleSmall": "Sobre mí",
-        "titleBig": "soy <span>Delvalle Fernando</span>",
-        "quote": "“El mejor modo de <span>predecir</span> el futuro es <span>crearlo</span>.“",
-        "description": "Un desarrollador de software con pasión por la tecnología y la innovación. Me gusta crear soluciones prácticas, eficientes y escalables, siempre pensando en cómo mejorar la experiencia de las personas que las usan. Me motiva enfrentar nuevos retos, optimizar procesos y mantenerme en aprendizaje constante para seguir creciendo tanto en lo técnico como en lo creativo."
+        "titleSmall": "Sobre Mí",
+        "titleBig": "Soy <span>Delvalle Fernando</span>",
+        "quote": "\"La mejor forma de <span>predecir</span> el futuro es <span>crearlo</span>.\"",
+        "description": "Un desarrollador de software con pasión por la tecnología y la innovación. Me gusta crear soluciones prácticas, eficientes y escalables, siempre pensando en cómo mejorar la experiencia de las personas que las usan. Me motiva enfrentar nuevos retos, optimizar procesos y mantenerme en aprendizaje constante para seguir creciendo tanto en lo técnico como en lo creativo.",
+        "title_1": "Utterly y Liderazgo",
+        "text_1": "Fundador y Tech Lead de Utterly, mi propio equipo de desarrollo. Me involucro en todo el ciclo de vida: desde la planeación, entrevistas, documentación y diseño, hasta el desarrollo Full Stack y el despliegue a producción.",
+        "title_2": "Infraestructura Propia",
+        "text_2": "Administro y gestiono mi propio servidor. Contar con esta infraestructura me permite disponer de entornos de demostración ágiles, y potenciar un flujo de comunicación y de trabajo constante y directo con mi equipo.",
+        "title_3": "Concepción Integral",
+        "text_3": "Dispongo de una mentalidad de producto enfocada en aportar valor comercial a nivel tecnológico para nuevos clientes, a la par que ofrezco la rigurosidad y prácticas corporativas de ingeniería y software vitales para integrarme de manera valiosa en la industria corporativa."
     },
     "skills": {
         "title": "Habilidades",
         "description": "Tecnologías, herramientas y lenguajes que uso en proyectos reales."
     },
+    "services": {
+        "header_title": "Servicios y Especialidades",
+        "p1_title": "Ingeniería Frontend",
+        "p1_desc": "Construcción de interfaces de usuario resilientes e interactivas con React, Next.js y arquitectura CSS moderna. Enfoque en rendimiento, accesibilidad (a11y) e implementación pixel-perfect de sistemas de diseño complejos.",
+        "p2_title": "Backend y Arquitectura",
+        "p2_desc": "Diseño de microservicios escalables y APIs REST/GraphQL robustas. Uso de Node.js, PHP y bases de datos relacionales para garantizar integridad de datos y comunicación fluida entre servicios.",
+        "p3_title": "Desarrollo Creativo",
+        "p3_desc": "Conectando diseño e ingeniería. Con amplia experiencia en la creación de experiencias web inmersivas usando GSAP, Framer Motion y WebGL para páginas de marketing destacadas.",
+        "p4_title": "Escritorio y Móvil",
+        "p4_desc": "Desarrollo de aplicaciones multiplataforma con rendimiento nativo tanto para dispositivos móviles como para entornos de escritorio.",
+        "p5_title": "Aprendizaje",
+        "p5_desc": "Tecnologías en las que estoy expandiendo activamente mi expertise. Siempre empujando los límites de mi stack para mantenerme a la vanguardia del desarrollo moderno."
+    },
+    "cta": {
+        "headline_1": "Construyamos el",
+        "headline_2": "futuro juntos.",
+        "subtitle": "Actualmente disponible para proyectos freelance y roles de liderazgo.",
+        "button": "Hablemos"
+    },
     "works": {
         "title": "Proyectos Seleccionados",
         "moreProjects": "Más Proyectos",
         "moreDetails": "Más Detalles",
+        "goBack": "Volver",
+        "viewDemo": "Ver Demo",
+        "viewCode": "Ver Código",
+        "prevProject": "Anterior",
+        "nextProject": "Siguiente",
+        "projectNotFound": "Proyecto no encontrado",
+        "meta": {
+            "role": "Rol",
+            "year": "Año",
+            "duration": "Duración",
+            "team": "Equipo",
+            "stack": "Stack",
+            "features": "Funcionalidades"
+        },
         "projects": {
             "otter": {
                 "title": "Otter Task",
                 "subtitle": "v.1 - Panel MVC",
-                "description": "Sistema de gestión empresarial para organizar stock, ventas y compras. Desarrollado con PHP y MySQL siguiendo arquitectura MVC. Desplegado en infraestructura propia con Nginx y Ngrok para desarrollo colaborativo.",
+                "description": "Sistema de gestión de negocios para organizar stock, ventas y compras. Desarrollado con PHP y MySQL siguiendo arquitectura MVC. Desplegado en infraestructura propia con Nginx y Ngrok para desarrollo colaborativo.",
                 "longDescription": "",
                 "year": "2024-2025",
                 "duration": "2 meses",
@@ -44,8 +106,8 @@
             },
             "otter-v2": {
                 "title": "Otter Task",
-                "subtitle": "v.2 - Migración React",
-                "description": "Migración y modernización de Otter Task a arquitectura SPA. Frontend completamente reescrito en React consumiendo API RESTful en PHP. Incluye nuevas funcionalidades: generación de tickets, sistema de QR, modal de ventas mejorado y flujos más profesionales. Desplegado en infraestructura propia con Nginx y Ngrok.",
+                "subtitle": "v.2 - Migración a React",
+                "description": "Migración y modernización de Otter Task a arquitectura SPA. Frontend completamente reescrito en React consumiendo API RESTful en PHP. Incluye nuevas funcionalidades: generación de tickets, sistema QR, modal de ventas mejorado y flujos de trabajo más profesionales. Desplegado en infraestructura propia con Nginx y Ngrok.",
                 "longDescription": "",
                 "year": "2025-2026",
                 "duration": "3 meses",
@@ -60,18 +122,18 @@
             },
             "cpa": {
                 "title": "CPA Refrigeración",
-                "subtitle": "Panel + App Mobile",
-                "description": "Sistema integral con app móvil para técnicos de refrigeración y panel de administración web. Permite registrar visitas técnicas, estado de equipos, incidencias y generar reportes. Desarrollado en equipo, liderando la implementación técnica del frontend en React integrado con API REST en PHP. Desplegado en infraestructura propia.",
+                "subtitle": "Panel + App Móvil",
+                "description": "Sistema integral con app móvil para técnicos de refrigeración y panel web administrativo. Permite registrar visitas técnicas, estado de equipos, incidentes y generar informes. Desarrollado en equipo, liderando la implementación técnica del frontend React integrado con API REST en PHP. Desplegado en infraestructura propia.",
                 "longDescription": "",
                 "year": "2025",
                 "duration": "2 meses",
                 "collaborators": "1 colaborador",
                 "role": "Desarrollador Full Stack",
                 "features": [
-                    "Panel administrativo web",
+                    "Panel web administrativo",
                     "App móvil nativa",
                     "Registro de visitas técnicas",
-                    "Generación de reportes"
+                    "Generación de informes"
                 ]
             },
             "cpa-desinfeccion": {
@@ -92,16 +154,16 @@
             },
             "mottoso": {
                 "title": "Mottoso Propiedades",
-                "subtitle": "Inmobiliaria Integral",
-                "description": "Plataforma inmobiliaria completa con catálogo de propiedades para compra y alquiler, sistema de tasaciones, integración de mapas interactivos, formularios de contacto y panel de administración. Desarrollado en equipo con React y PHP. Desplegado en infraestructura propia con Nginx.",
+                "subtitle": "Plataforma Inmobiliaria Completa",
+                "description": "Plataforma inmobiliaria completa con catálogo de propiedades para compra y alquiler, sistema de tasación, integración de mapas interactivos, formularios de contacto y panel administrativo. Desarrollado en equipo con React y PHP. Desplegado en infraestructura propia con Nginx.",
                 "longDescription": "",
                 "year": "2025",
-                "duration": "1 meses",
+                "duration": "1 mes",
                 "collaborators": "1 colaborador",
                 "role": "Desarrollador Full Stack",
                 "features": [
                     "Catálogo de propiedades",
-                    "Sistema de tasaciones",
+                    "Sistema de tasación",
                     "Mapas interactivos",
                     "Panel administrativo"
                 ]
@@ -124,23 +186,23 @@
             },
             "lithos": {
                 "title": "Lithos",
-                "subtitle": "Tatto Publisher",
-                "description": "Pagina publicitaria para estudio de tatuajes que permite a los clientes conocer mas el estudio y pedir turnos online.",
+                "subtitle": "Publisher de Tatuajes",
+                "description": "Página publicitaria para estudio de tatuajes que permite a los clientes conocer más sobre el estudio y reservar turnos online.",
                 "longDescription": "",
                 "year": "2026",
-                "duration": "2 dias",
+                "duration": "2 días",
                 "collaborators": "",
                 "role": "Desarrollador Full Stack",
                 "features": [
-                    "Muestra de galeria de tatuajes",
-                    "Informacion del estudio",
-                    "Panel para pedir turnos online (via Whatsapp)"
+                    "Galería de tatuajes",
+                    "Información del estudio",
+                    "Reserva de turnos online (vía WhatsApp)"
                 ]
             },
             "tateti": {
                 "title": "Ta-Te-Ti",
                 "subtitle": "Juego Clásico",
-                "description": "Implementación del clásico juego de tres en raya con interfaz moderna y animaciones fluidas. Desarrollado en React para practicar gestión de estado y lógica de juego.",
+                "description": "Implementación del clásico juego de ta-te-ti con interfaz moderna y animaciones fluidas. Desarrollado en React para practicar gestión de estado y lógica de juego.",
                 "longDescription": "",
                 "year": "2024",
                 "duration": "1 semana",
@@ -155,7 +217,7 @@
             "portfolio-v.1": {
                 "title": "Portfolio Personal",
                 "subtitle": "Primera Versión",
-                "description": "Mi primer portfolio personal desarrollado en React. Proyecto de aprendizaje que me permitió experimentar con animaciones y efectos visuales, aunque presentaba problemas de rendimiento que motivaron esta nueva versión que estás viendo.",
+                "description": "Mi primer portfolio personal desarrollado en React. Proyecto de aprendizaje que me permitió experimentar con animaciones y efectos visuales, aunque tenía problemas de rendimiento que motivaron esta nueva versión que estás viendo.",
                 "longDescription": "",
                 "year": "2024",
                 "duration": "2 semanas",
@@ -163,30 +225,29 @@
                 "role": "Desarrollador Frontend",
                 "features": [
                     "Animaciones y efectos visuales",
-                    "Diseño responsivo",
-                    "Presentación de proyectos"
+                    "Diseño responsive",
+                    "Showcase de proyectos"
                 ]
             },
             "otter-solutions": {
                 "title": "Otter Solutions",
                 "subtitle": "Portfolio Corporativo",
-                "description": "Portfolio profesional de Otter Solutions, equipo de desarrollo de software donde actúo como tech lead y desarrollador. Sitio diseñado para mostrar nuestros servicios y proyectos colaborativos. Desarrollado en React con diseño moderno y responsivo.",
+                "description": "Portfolio profesional para Otter Solutions, equipo de desarrollo de software donde actúo como tech lead y desarrollador. Sitio diseñado para mostrar nuestros servicios y proyectos colaborativos. Desarrollado en React con diseño moderno y responsive.",
                 "longDescription": "",
                 "year": "2025",
                 "duration": "2 semanas",
                 "collaborators": "1 colaborador",
                 "role": "Desarrollador Frontend",
                 "features": [
-                    "Diseño moderno y responsivo",
+                    "Diseño moderno y responsive",
                     "Presentación de servicios",
                     "Proyectos colaborativos"
                 ]
-
             },
             "sassa": {
                 "title": "Sassa",
                 "subtitle": "Landing Page Financiera",
-                "description": "Landing page promocional para aplicación financiera. Desarrollada con WordPress y Elementor, enfocada en conversión y diseño visual atractivo.",
+                "description": "Landing page promocional para una aplicación financiera. Desarrollada con WordPress y Elementor, enfocada en conversión y diseño visual atractivo.",
                 "longDescription": "",
                 "year": "2024",
                 "duration": "1 semana",
@@ -194,14 +255,14 @@
                 "role": "Desarrollador Frontend",
                 "features": [
                     "Diseño visual atractivo",
-                    "Optimización para conversión",
+                    "Optimización de conversión",
                     "Desarrollo con WordPress y Elementor"
                 ]
             },
             "tattoo": {
                 "title": "Tattoo Sizer",
                 "subtitle": "Herramienta para Tatuadores",
-                "description": "Aplicación web para tatuadores que facilita la impresión de plantillas. Permite agrupar múltiples imágenes en formato A4 y ajustar dimensiones basándose en 300 DPI. Desarrollada con JavaScript vanilla y Canvas API. Uno de mis primeros proyectos comerciales.",
+                "description": "Aplicación web para tatuadores que facilita la impresión de plantillas. Permite agrupar múltiples imágenes en formato A4 y ajustar dimensiones en base a 300 DPI. Desarrollada con JavaScript vanilla y Canvas API. Uno de mis primeros proyectos comerciales.",
                 "longDescription": "",
                 "year": "2024",
                 "duration": "2 semanas",
@@ -216,7 +277,7 @@
         }
     },
     "footer": {
-        "connectWithMe": "Conectémonos",
+        "connectWithMe": "Conectemos",
         "rightsReserved": "Todos los derechos reservados."
     }
 }

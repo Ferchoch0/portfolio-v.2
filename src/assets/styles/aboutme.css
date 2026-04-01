@@ -1,0 +1,166 @@
+.fd-about--wrapper {
+    position: relative;
+    height: 300vh;
+    background: linear-gradient(to bottom,
+            var(--rock-color) 0%,
+            var(--bg-color) 15vh,
+            var(--bg-color) 100%);
+    color: var(--text-color);
+    z-index: 50;
+    transform-origin: center center;
+}
+
+.fd-about--sticky {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.fd-about--f-container {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 50vw;
+    height: 65vh;
+    background: var(--bg-color);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.fd-about--svg-f {
+    width: 60%;
+    max-width: 400px;
+    height: auto;
+}
+
+.f-path-anim {
+    stroke-linejoin: miter;
+    stroke-linecap: square;
+}
+
+.fd-about--track {
+    display: flex;
+    height: 100%;
+    width: 300vw;
+    will-change: transform;
+}
+
+.fd-about--panel {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 10vw 0 55vw;
+    box-sizing: border-box;
+}
+
+.fd-about--title {
+    font-size: clamp(3rem, 8vw, 6.5rem);
+    font-family: var(--font-display);
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 0 1.5rem 0;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    position: relative;
+    z-index: 20;
+}
+
+.fd-about--text {
+    font-size: clamp(1.15rem, 1.8vw, 1.8rem);
+    font-family: var(--font-body);
+    font-weight: 300;
+    color: var(--text-muted);
+    max-width: 65ch;
+    line-height: 1.6;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    position: relative;
+    z-index: 20;
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Tablet (1024px)
+   ═══════════════════════════════════════════ */
+@media (max-width: 1024px) {
+    .fd-about--f-container {
+        width: 45vw;
+    }
+
+    .fd-about--panel {
+        padding: 0 6vw 0 50vw;
+    }
+}
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE — Mobile (768px)
+   On mobile, ALL GSAP animations are disabled in JSX.
+   We switch to a simple vertical stacked layout.
+   ═══════════════════════════════════════════ */
+@media (max-width: 768px) {
+    .fd-about--wrapper.fd-about--mobile {
+        height: auto;
+        min-height: auto;
+    }
+
+    .fd-about--wrapper.fd-about--mobile .fd-about--sticky {
+        position: relative;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .fd-about--wrapper.fd-about--mobile .fd-about--f-container {
+        position: relative;
+        top: auto;
+        transform: none;
+        width: 100%;
+        height: auto;
+        padding: 4rem 0 2rem 0;
+        background: transparent;
+        border-right: none;
+        opacity: 0.15;
+    }
+
+    .fd-about--wrapper.fd-about--mobile .fd-about--svg-f {
+        width: 40%;
+        max-width: 200px;
+    }
+
+    .fd-about--wrapper.fd-about--mobile .fd-about--track {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .fd-about--wrapper.fd-about--mobile .fd-about--panel {
+        width: 100%;
+        height: auto;
+        min-height: auto;
+        padding: 3rem 6vw;
+    }
+
+    .fd-about--title {
+        font-size: clamp(2rem, 8vw, 3rem);
+        margin: 0 0 1rem 0;
+    }
+
+    .fd-about--text {
+        font-size: 1rem;
+        max-width: 100%;
+        padding-top: 1rem;
+        line-height: 1.5;
+    }
+}
