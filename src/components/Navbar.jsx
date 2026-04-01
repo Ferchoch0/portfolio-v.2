@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FaTimes, FaBars, FaChevronDown, FaGithub, FaArrowRight, FaTerminal } from "react-icons/fa";
+import { FaTimes, FaBars, FaChevronDown, FaGithub, FaLinkedin, FaArrowRight, FaTerminal } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { useLocation } from "react-router-dom";
@@ -93,6 +93,9 @@ export default function Navbar() {
                 <div className="nav-letta-actions">
                     <a href="https://github.com/Ferchoch0" target="_blank" rel="noreferrer" className="action-link-icon">
                         <FaGithub /> <span className="action-link-text">GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/fernando-d-delvalle/" target="_blank" rel="noreferrer" className="action-link-icon">
+                        <FaLinkedin /> <span className="action-link-text">LinkedIn</span>
                     </a>
                     
                     <div className="nav-letta-item has-dropdown nav-lang-letta">
