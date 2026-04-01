@@ -109,6 +109,106 @@
     max-width: 700px;
 }
 
+/* ── Selection Screen ── */
+.fd-contact-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-top: 1rem;
+}
+
+.fd-contact-selection-title {
+    font-family: var(--font-manrope);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    color: var(--text-inverted-color);
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.fd-contact-selection-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.fd-contact-choice-btn {
+    background: transparent;
+    border: 2px solid rgba(0,0,0,0.1);
+    color: var(--text-inverted-color);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    font-family: var(--font-manrope);
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.fd-contact-choice-btn:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px -5px rgba(0,0,0,0.1);
+}
+
+.fd-contact-choice-btn::after {
+    content: "→";
+    position: absolute;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.fd-contact-choice-btn:hover::after {
+    opacity: 1;
+    right: 1.5rem;
+}
+
+/* ── Form Container ── */
+.fd-contact-form-container {
+    position: relative;
+}
+
+.fd-contact-goback {
+    background: transparent;
+    border: none;
+    color: var(--text-inverted-muted);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0;
+    margin-bottom: 2rem;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.fd-contact-goback:hover {
+    color: var(--primary-color);
+}
+
+.fd-contact-form .fd-contact-row {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+@media (min-width: 600px) {
+    .fd-contact-form .fd-contact-row {
+        flex-direction: row;
+        gap: 2rem;
+    }
+}
+
+.fd-contact-form .fd-contact-col {
+    flex: 1;
+}
+
 .fd-contact-form .form-group {
     margin-bottom: 3rem;
     position: relative;

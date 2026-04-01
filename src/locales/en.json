@@ -276,6 +276,41 @@
             }
         }
     },
+    "contact": {
+        "title": "Let's start <br/>a project.",
+        "subtitle": "Fill out the form below or email me directly at ",
+        "location": "Location",
+        "locationDesc": "Argentina, available worldwide.",
+        "socials": "Socials",
+        "selectTitle": "How can I help you?",
+        "btnRecruiter": "I am a Recruiter",
+        "btnClient": "I have a Project",
+        "goBack": "Go Back",
+        "recruiter": {
+            "name": "Hi, my name is",
+            "namePlh": "Enter your name",
+            "email": "and I can be reached at",
+            "emailPlh": "Enter your email",
+            "company": "I work at",
+            "companyPlh": "Company name",
+            "role": "as a",
+            "rolePlh": "Role / Position",
+            "message": "And I'm reaching out because...",
+            "messagePlh": "Tell me about the opportunity",
+            "submit": "Send Message",
+            "sent": "Message sent. I will get in touch soon."
+        },
+        "client": {
+            "name": "Hi, my name is",
+            "namePlh": "Enter your name",
+            "email": "and I can be reached at",
+            "emailPlh": "Enter your email",
+            "message": "I want to talk about my project...",
+            "messagePlh": "Tell me about your idea",
+            "submit": "Send Message",
+            "sent": "Message sent. I will get in touch soon."
+        }
+    },
     "footer": {
         "connectWithMe": "Let's Connect",
         "rightsReserved": "All rights reserved."

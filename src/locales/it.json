@@ -276,6 +276,41 @@
             }
         }
     },
+    "contact": {
+        "title": "Iniziamo <br/>un progetto.",
+        "subtitle": "Compila il modulo o scrivimi a ",
+        "location": "Posizione",
+        "locationDesc": "Argentina, disponibile in tutto il mondo.",
+        "socials": "Social",
+        "selectTitle": "Come posso aiutarti?",
+        "btnRecruiter": "Sono un Recruiter",
+        "btnClient": "Ho un Progetto",
+        "goBack": "Torna Indietro",
+        "recruiter": {
+            "name": "Ciao, mi chiamo",
+            "namePlh": "Il tuo nome",
+            "email": "e puoi contattarmi a",
+            "emailPlh": "La tua email",
+            "company": "Lavoro in",
+            "companyPlh": "Nome azienda",
+            "role": "come",
+            "rolePlh": "Ruolo / Posizione",
+            "message": "E ti contatto perché...",
+            "messagePlh": "Parlami dell'opportunità",
+            "submit": "Invia Messaggio",
+            "sent": "Messaggio inviato. Ti contatterò a breve."
+        },
+        "client": {
+            "name": "Ciao, mi chiamo",
+            "namePlh": "Il tuo nome",
+            "email": "e puoi contattarmi a",
+            "emailPlh": "La tua email",
+            "message": "Voglio parlarti del mio progetto...",
+            "messagePlh": "Parlami della tua idea",
+            "submit": "Invia Messaggio",
+            "sent": "Messaggio inviato. Ti contatterò a breve."
+        }
+    },
     "footer": {
         "connectWithMe": "Connettiamoci",
         "rightsReserved": "Tutti i diritti riservati."

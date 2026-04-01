@@ -276,6 +276,41 @@
             }
         }
     },
+    "contact": {
+        "title": "Empecemos <br/>un proyecto.",
+        "subtitle": "Completa el formulario o envíame un correo a ",
+        "location": "Ubicación",
+        "locationDesc": "Argentina, disponible para todo el mundo.",
+        "socials": "Redes",
+        "selectTitle": "¿Cómo puedo ayudarte?",
+        "btnRecruiter": "Soy Reclutador",
+        "btnClient": "Tengo un Proyecto",
+        "goBack": "Volver",
+        "recruiter": {
+            "name": "Hola, mi nombre es",
+            "namePlh": "Tu nombre",
+            "email": "y me puedes contactar en",
+            "emailPlh": "Tu correo",
+            "company": "Trabajo en",
+            "companyPlh": "Empresa",
+            "role": "como",
+            "rolePlh": "Puesto / Rol",
+            "message": "Y me pongo en contacto porque...",
+            "messagePlh": "Cuéntame sobre la oportunidad",
+            "submit": "Enviar Mensaje",
+            "sent": "Mensaje enviado. Me pondré en contacto pronto."
+        },
+        "client": {
+            "name": "Hola, mi nombre es",
+            "namePlh": "Tu nombre",
+            "email": "y mi correo es",
+            "emailPlh": "Tu correo",
+            "message": "Quiero hablar sobre mi proyecto...",
+            "messagePlh": "Cuéntame sobre tu idea",
+            "submit": "Enviar Mensaje",
+            "sent": "Mensaje enviado. Me pondré en contacto pronto."
+        }
+    },
     "footer": {
         "connectWithMe": "Conectemos",
         "rightsReserved": "Todos los derechos reservados."
