@@ -1,0 +1,142 @@
+/* Hide system cursor globally on large screens where pointer is fine */
+@media (pointer: fine) {
+    body, a, button, input, textarea, select, [role="button"], .clickable {
+        cursor: none !important;
+    }
+}
+
+/* Base ring: The "Black hole" halo */
+.custom-cursor-ring {
+    position: fixed;
+    top: -24px;
+    left: -24px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 100000;
+    
+    /* Cosmic black hole aesthetic */
+    background: rgba(0, 0, 0, 0.555);
+    border: 1px solid rgba(132, 85, 239, 0.3);
+    box-shadow: 
+        0 0 15px rgba(132, 85, 239, 0.5), 
+        inset 0 0 25px rgba(0, 0, 0, 0.6), 
+        inset 0 0 10px rgba(132, 85, 239, 0.4);
+    
+    /* Color inversion and subtle distortion */
+    backdrop-filter: blur(2px) contrast(1.1) invert(0.55) ;
+    -webkit-backdrop-filter: blur(2px) contrast(1.1) invert(0.55) ;
+
+    transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                height 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                top 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                left 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                border 0.3s ease, 
+                box-shadow 0.3s ease,
+                backdrop-filter 0.3s ease;
+}
+
+/* Core point: The singularity */
+.custom-cursor-core {
+    position: fixed;
+    top: -8px;
+    left: -8px;
+    width: 16px;
+    height: 16px;
+    border-radius: 0;
+    background-color: var(--primary-color, #8455EF);
+    clip-path: polygon(50% 0%, 100% 100%, 50% 80%, 0% 100%);
+    pointer-events: none;
+    z-index: 100001;
+    filter: drop-shadow(0 0 5px #8455EF);
+    
+    transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+}
+
+/* Interactive States: HOVER */
+.custom-cursor-ring.hovered {
+    opacity: 0.15;
+    border-color: rgba(132, 85, 239, 0.2);
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.custom-cursor-core.hovered {
+    opacity: 0; /* Simulates blackhole consuming the core */
+}
+
+/* Interactive States: CLICKED */
+.custom-cursor-ring.clicked {
+    width: 32px;
+    height: 32px;
+    top: -16px;
+    left: -16px;
+    background: rgba(132, 85, 239, 0.5);
+    box-shadow: 0 0 20px rgba(132, 85, 239, 1);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+    transition: width 0.1s ease-out, height 0.1s ease-out, top 0.1s ease-out, left 0.1s ease-out;
+}
+
+/* ═══════════════════════════════════════════
+   Black Hole Accretion Disk Animations
+   ═══════════════════════════════════════════ */
+.custom-cursor-ring::before,
+.custom-cursor-ring::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.custom-cursor-ring::before {
+    inset: -8px;
+    background: conic-gradient(
+        from 0deg,
+        transparent 0%,
+        rgba(132, 85, 239, 0.1) 20%,
+        rgba(132, 85, 239, 0.8) 50%,
+        rgba(132, 85, 239, 0.1) 80%,
+        transparent 100%
+    );
+    -webkit-mask-image: radial-gradient(transparent 55%, black 60%);
+    mask-image: radial-gradient(transparent 55%, black 60%);
+    animation: blackhole-spin 2s linear infinite;
+}
+
+.custom-cursor-ring::after {
+    inset: -12px;
+    background: conic-gradient(
+        from 180deg,
+        transparent 0%,
+        rgba(132, 85, 239, 0.05) 30%,
+        rgba(132, 85, 239, 0.5) 50%,
+        rgba(132, 85, 239, 0.05) 70%,
+        transparent 100%
+    );
+    -webkit-mask-image: radial-gradient(transparent 60%, black 65%);
+    mask-image: radial-gradient(transparent 60%, black 65%);
+    animation: blackhole-spin-reverse 3.5s linear infinite;
+    filter: blur(2px);
+    border-radius: 40% 60% 50% 50% / 50% 50% 60% 40%;
+}
+
+.custom-cursor-ring.hovered::before,
+.custom-cursor-ring.hovered::after {
+    opacity: 0;
+}
+
+@keyframes blackhole-spin {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.05); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+@keyframes blackhole-spin-reverse {
+    0% { transform: rotate(360deg) scale(1); }
+    50% { transform: rotate(180deg) scale(1.02); }
+    100% { transform: rotate(0deg) scale(1); }
+}

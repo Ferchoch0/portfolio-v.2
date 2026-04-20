@@ -6,6 +6,7 @@ import { FaReact, FaNodeJs, FaGitAlt, FaFigma, FaPhp, FaMobileAlt, FaCss3Alt, Fa
 import { SiTailwindcss, SiNextdotjs, SiMysql, SiCplusplus, SiLaravel, SiThreedotjs, SiTauri, SiDocker, SiGreensock, SiFramer } from 'react-icons/si';
 import { TbBrandCSharp } from "react-icons/tb";
 import { useTranslation } from 'react-i18next';
+import Singularity from '@components/Singularity';
 import '@styles/services.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -125,8 +126,9 @@ export default function Services() {
 
                     masterTl.to(numEl, {
                         scale: 1,
-                        duration: SCROLL_PER_ITEM * 0.3,
-                        onStart: () => numEl.classList.remove('active')
+                        color: "rgba(128, 128, 128, 0.3)",
+                        borderColor: "transparent",
+                        duration: SCROLL_PER_ITEM * 0.3
                     }, startTime + SCROLL_PER_ITEM * 0.7);
                 }
             } else {
@@ -141,8 +143,9 @@ export default function Services() {
 
                 masterTl.to(numEl, {
                     scale: 1.3,
-                    duration: SCROLL_PER_ITEM * 0.3,
-                    onStart: () => numEl.classList.add('active')
+                    color: "var(--text-color)",
+                    borderColor: "rgba(128, 128, 128, 0.3)",
+                    duration: SCROLL_PER_ITEM * 0.3
                 }, startTime);
 
                 if (i < totalServices - 1) {
@@ -155,8 +158,9 @@ export default function Services() {
 
                     masterTl.to(numEl, {
                         scale: 1,
-                        duration: SCROLL_PER_ITEM * 0.3,
-                        onStart: () => numEl.classList.remove('active')
+                        color: "rgba(128, 128, 128, 0.3)",
+                        borderColor: "transparent",
+                        duration: SCROLL_PER_ITEM * 0.3
                     }, startTime + SCROLL_PER_ITEM * 0.7);
                 }
             }
@@ -167,16 +171,18 @@ export default function Services() {
     return (
         <section className="fd-services" id="services" ref={sectionRef}>
             <div className="fd-services-inner">
-                
+
+
+
                 {/* Left: Vertical Timeline */}
                 <div className="fd-services-timeline">
                     <div className="fd-timeline-track">
                         <div className="fd-timeline-progress" ref={progressRef}></div>
                     </div>
                     <div className="fd-timeline-numbers">
-                    {servicesData.map((s, i) => (
-                            <div 
-                                key={`num-${i}`} 
+                        {servicesData.map((s, i) => (
+                            <div
+                                key={`num-${i}`}
                                 className={`fd-timeline-num ${i === 0 && !isMobile ? 'active' : ''}`}
                                 ref={el => numsRef.current[i] = el}
                             >
@@ -194,7 +200,7 @@ export default function Services() {
 
                     <div className="fd-services-panels">
                         {servicesData.map((service, i) => (
-                            <div 
+                            <div
                                 key={`panel-${i}`}
                                 className={`fd-service-panel ${isMobile ? 'is-active' : (i === 0 ? 'is-active' : '')}`}
                                 ref={el => panelsRef.current[i] = el}
@@ -202,7 +208,7 @@ export default function Services() {
                                 <span className="fd-service-panel-num">{service.num}</span>
                                 <h3 className="fd-service-panel-title">{service.title}</h3>
                                 <p className="fd-service-panel-desc">{service.description}</p>
-                                
+
                                 {service.isTechGrid ? (
                                     <div className="fd-service-tech-grid">
                                         {service.techs.map(tech => (
@@ -222,6 +228,9 @@ export default function Services() {
                             </div>
                         ))}
                     </div>
+                </div>
+                <div className='fd-services-singularity'>
+                    <Singularity size={3} />
                 </div>
             </div>
         </section>

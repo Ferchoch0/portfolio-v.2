@@ -48,7 +48,7 @@ export default function Works({ onOpenProjectsModal }) {
             return;
         }
 
-        const WORKS_ANIM = window.innerHeight * 2.8;
+        const WORKS_ANIM = window.innerHeight * 2.0;
         
         // Timeline Maestro Atado al Scroll
         const tl = gsap.timeline({
@@ -79,17 +79,7 @@ export default function Works({ onOpenProjectsModal }) {
             ease: "power2.in"
         }, 0);
 
-        // Fase 2: Otter Task se expande a Full Screen
-        tl.to(heroItem, {
-            width: '100vw',
-            height: '100vh',
-            x: '0vw', 
-            y: '0vh',
-            duration: window.innerHeight * 0.8,
-            ease: "power3.inOut"
-        }, window.innerHeight * 0.2);
-
-        // Fase 3: Reducción al Split Layout
+        // Fase 2: Reducción al Split Layout (Omitimos el "agrandado a pantalla completa")
         const destinyContainer = visualDestRef.current.querySelector('.fd-works-image-container');
         
         tl.to(heroItem, {
@@ -100,16 +90,16 @@ export default function Works({ onOpenProjectsModal }) {
             borderRadius: "0px", 
             duration: window.innerHeight * 1.0,
             ease: "power3.inOut"
-        }, window.innerHeight * 1.0);
+        }, window.innerHeight * 0.2);
 
-        // EXTRA FASE: El Hero desaparece EXACTAMENTE al terminar de achicarse, como pediste
-        tl.to(heroItem, { opacity: 0, duration: window.innerHeight * 0.3 }, window.innerHeight * 1.9);
+        // EXTRA FASE: El Hero desaparece EXACTAMENTE al terminar de achicarse
+        tl.to(heroItem, { opacity: 0, duration: window.innerHeight * 0.3 }, window.innerHeight * 1.1);
 
-        // Fase 4: Lista izquierda aparece apenas desaparece el Hero
+        // Fase 3: Lista izquierda aparece apenas desaparece el Hero
         tl.to(splitLayoutRef.current, { 
             opacity: 1, 
             duration: window.innerHeight * 0.5 
-        }, window.innerHeight * 2.0);
+        }, window.innerHeight * 1.2);
         
         const rows = gsap.utils.toArray('.fd-works-row');
         tl.fromTo(rows, 
@@ -122,7 +112,7 @@ export default function Works({ onOpenProjectsModal }) {
                 stagger: window.innerHeight * 0.1, 
                 ease: "power2.out" 
             }, 
-            window.innerHeight * 2.0
+            window.innerHeight * 1.2
         );
 
         // ** Interactive Hover Effects para cuando la animación de scroll acaba **

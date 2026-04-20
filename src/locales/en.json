@@ -10,7 +10,7 @@
         "desc_1": "I build products with real depth.",
         "desc_2": "I lead a freelance team where technical criteria <br className=\"fd-hero--br\" /> matters as much as business vision.",
         "utterlyButton": "Visit Utterly",
-        "contactButton": "Let's talk about your project",
+        "contactButton": "Let's talk",
         "services": {
             "web": "Web",
             "mobile": "Mobile",
@@ -286,6 +286,9 @@
         "btnRecruiter": "I am a Recruiter",
         "btnClient": "I have a Project",
         "goBack": "Go Back",
+        "sending": "Sending...",
+        "sendAnother": "Send another message",
+        "errorMsg": "Something went wrong. Please try again.",
         "recruiter": {
             "name": "Hi, my name is",
             "namePlh": "Enter your name",

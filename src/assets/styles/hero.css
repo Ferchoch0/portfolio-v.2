@@ -4,17 +4,97 @@
 .fd-hero--container {
     height: 100vh;
     width: 100%;
-    background-color: #fff;
+    background-color: black;
     color: #f5f5f5;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: flex-start;
-    padding: 0 0 20px 0;
+    align-items: center;
+    padding: 0 0 5vh 0;
     margin: 0;
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
+}
+
+/* ═══════════════════════════════════════════
+   BLACKHOLE BACKGROUND
+   ═══════════════════════════════════════════ */
+.fd-hero--blackhole-container {
+    position: absolute;
+    top: -465px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh + 340px);
+    z-index: 1;
+    overflow: hidden;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+@media (min-width: 1280px) {
+    .fd-hero--blackhole-container {
+        top: -455px;
+    }
+}
+
+@media (min-width: 1536px) {
+    .fd-hero--blackhole-container {
+        top: -580px;
+    }
+}
+
+.fd-hero--blackhole-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: rotate(180deg) translateZ(0);
+    will-change: transform;
+    pointer-events: none;
+}
+
+.fd-hero--blackhole-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.3), black);
+}
+
+/* ═══════════════════════════════════════════
+   SPACETIME GRID  –  warped by black hole
+   ═══════════════════════════════════════════ */
+.fd-hero--grid-container {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.fd-hero--grid-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    mask-image: radial-gradient(
+        ellipse 45% 50% at 50% 12%,
+        rgba(0, 0, 0, 0) 5%,
+        rgba(0, 0, 0, 0.8) 35%,
+        rgba(0, 0, 0, 0.4) 65%,
+        rgba(0, 0, 0, 0) 100%
+    );
+    -webkit-mask-image: radial-gradient(
+        ellipse 45% 50% at 50% 12%,
+        rgba(0, 0, 0, 0) 5%,
+        rgba(0, 0, 0, 0.8) 35%,
+        rgba(0, 0, 0, 0.4) 65%,
+        rgba(0, 0, 0, 0) 100%
+    );
 }
 
 /* ═══════════════════════════════════════════
@@ -26,6 +106,7 @@
     z-index: 1;
     pointer-events: none;
     overflow: hidden;
+    transform: translateZ(0);
 }
 
 .fd-scene--layer,
@@ -64,13 +145,11 @@
     inset: 0;
     z-index: 5;
     pointer-events: none;
-    background: linear-gradient(
-        to top,
-        rgba(14, 14, 14, 0.92) 0%,
-        rgba(14, 14, 14, 0.65) 25%,
-        rgba(14, 14, 14, 0.1) 55%,
-        transparent 100%
-    );
+    background: linear-gradient(to top,
+            rgba(14, 14, 14, 0.92) 0%,
+            rgba(14, 14, 14, 0.65) 25%,
+            rgba(14, 14, 14, 0.1) 55%,
+            transparent 100%);
 }
 
 /* ═══════════════════════════════════════════
@@ -79,8 +158,11 @@
 .fd-hero--content {
     display: flex;
     flex-direction: column;
-    will-change: transform;
+    align-items: center;
+    will-change: transform, opacity;
+    transform: translateZ(0) translateY(-2vh);
     width: 100%;
+    max-width: 1200px;
     position: relative;
     z-index: 10;
 }
@@ -113,9 +195,20 @@
 }
 
 @keyframes pulse-primary {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(132, 85, 239, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(132, 85, 239, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(132, 85, 239, 0); }
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(132, 85, 239, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(132, 85, 239, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(132, 85, 239, 0);
+    }
 }
 
 .fd-hero--role-tag {
@@ -127,34 +220,117 @@
 }
 
 .fd-hero--title {
-    font-size: clamp(3rem, 13vw, 8rem);
+    font-size: clamp(3.5rem, 15vw, 10rem);
     font-family: var(--font-ruiga);
-    font-weight: 400;
+    font-weight: 700;
     margin: 0;
     line-height: 0.85;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
     letter-spacing: normal;
     text-transform: uppercase;
-    padding: 0 0 3rem 2rem;
+    padding: 0;
+}
+
+.fd-hero--title-line {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .fd-hero--char {
     display: inline-block;
-    will-change: transform;
+    will-change: transform, opacity, filter;
+    transform: translateZ(0);
 }
 
-.fd-hero--description {
-    font-size: clamp(0.9rem, 1.4vw, 1.2rem);
-    font-family: var(--font-body);
-    line-height: 1.4;
-    color: #b0b0b0;
-    font-weight: 300;
+/* ── BOTTOM LAYOUT ── */
+.fd-hero--bottom-layout {
     width: 100%;
-    letter-spacing: 0.02em;
-    margin-top: 3vh;
-    padding: 2rem 0 0 2rem;
-    border-top: 1px solid #333;
+    z-index: 15;
+    padding: 0 4vw;
+    box-sizing: border-box;
+}
+
+.fd-hero--bottom-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+/* ── QRS (LEFT) ── */
+.fd-hero--qrs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+    align-items: flex-start;
+}
+
+.fd-hero--qr-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.fd-hero--qr-item:hover {
+    transform: translateY(-2px);
+    border-color: rgba(191, 163, 255, 0.4);
+}
+
+.fd-hero--qr-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #000;
+    border-radius: 50%;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── MAGE & DESC (CENTER) ── */
+.fd-hero--mage-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.fd-hero--mage-img {
+    width: 330px;
+    height: auto;
+    display: block;
+    opacity: 0.95;
+    margin-bottom: -1.5rem; /* overlap effect */
+    z-index: 1;
+    position: relative;
+    pointer-events: none;
+    filter: brightness(0.8);
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+}
+
+.fd-hero--mage-text {
+    text-align: justify;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--surface-container-low-light);
+    line-height: 1.4;
+    width: 420px;
+    max-width: 100vw;
+    z-index: 2;
+    position: relative;
 }
 
 .fd-desc-text {
@@ -166,42 +342,84 @@
     padding-bottom: 0;
 }
 
-/* Services Row */
-.fd-hero--services {
-    margin-top: 1.5rem;
-    padding: 1rem 0 2rem 0;
+/* ── SIDE ACTIONS (RIGHT) ── */
+.fd-hero--side-actions {
     display: flex;
-    flex-wrap: wrap;
-    gap: 3vw;
-    border: none;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+    align-items: flex-end;
 }
 
-.fd-service-item {
-    font-size: clamp(0.75rem, 1vw, 0.9rem);
+.fd-hero--btn-small {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.75rem;
+    text-align: center;
+    width: 140px;
+    box-sizing: border-box;
+}
+
+/* ── MARQUEE CAROUSEL ── */
+.fd-hero--marquee {
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    margin-top: 1rem;
+    padding: 1rem 0;
+    mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+    -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0) 100%);
+}
+
+.fd-hero--marquee-track {
+    display: flex;
+    width: max-content;
+    animation: hero-marquee-scroll 45s linear infinite;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.fd-hero--marquee-group {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding-right: 4rem;
+}
+
+.fd-hero--marquee-item {
+    font-size: clamp(0.75rem, 1.2vw, 1rem);
     font-family: var(--font-body);
     font-weight: 300;
     color: #a0a0a0;
     display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
 }
 
-.fd-service-item span {
+.fd-hero--marquee-item span {
     color: #bfa3ff;
     font-weight: 500;
-    font-size: clamp(0.65rem, 0.8vw, 0.75rem);
     text-transform: uppercase;
     letter-spacing: 0.08em;
 }
 
-/* ── HERO BUTTONS ── */
-.fd-hero--actions {
+.fd-hero--marquee-separator {
     display: flex;
-    gap: 1rem;
-    margin-top: 1.5rem;
-    padding-bottom: 2rem;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    color: #bfa3ff;
 }
+
+@keyframes hero-marquee-scroll {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Existing buttons are left intact, we just removed fd-hero--actions that is no longer used */
 
 .fd-hero--btn {
     display: inline-flex;
@@ -253,10 +471,6 @@
     .fd-hero--title {
         font-size: clamp(3rem, 11vw, 6.5rem);
     }
-
-    .fd-hero--description {
-        padding-right: 2rem;
-    }
 }
 
 /* ═══════════════════════════════════════════
@@ -265,7 +479,6 @@
 @media (max-width: 1024px) {
     .fd-hero--title {
         font-size: clamp(2.5rem, 10vw, 5rem);
-        padding: 0 0 2rem 2rem;
     }
 
     .fd-hero--services {
@@ -278,8 +491,8 @@
    ═══════════════════════════════════════════ */
 @media (max-width: 768px) {
     .fd-hero--container {
-        padding-bottom: 1rem;
-        justify-content: flex-end;
+        padding-bottom: 0;
+        justify-content: center;
     }
 
     .fd-hero--top-badges {
@@ -296,48 +509,55 @@
 
     .fd-hero--title {
         font-size: clamp(1.6rem, 9vw, 2.8rem);
-        padding: 0 1.25rem 1rem 1.25rem;
+        padding: 0 0 1rem 0;
         line-height: 0.9;
     }
 
-    .fd-hero--description {
-        padding: 1rem 1.25rem 0 1.25rem;
-        margin-top: 0;
-        font-size: 0.85rem;
-        line-height: 1.4;
+    .fd-hero--bottom-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
     }
 
-    .fd-desc-text {
-        padding-bottom: 0.3rem;
-    }
-
-    .fd-hero--services {
-        gap: 0.5rem;
-        flex-direction: row;
-        flex-wrap: wrap;
-        padding: 0.75rem 0 0.75rem 0;
-        margin-top: 0.75rem;
-    }
-
-    .fd-service-item {
+    .fd-hero--qrs {
         flex-direction: row;
         align-items: center;
-        gap: 0.3rem;
+        justify-content: center;
+    }
+
+    .fd-hero--mage-container {
+        align-items: center;
+    }
+
+    .fd-hero--mage-text {
+        text-align: center;
+    }
+
+    .fd-hero--side-actions {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .fd-hero--btn-small {
+        width: auto;
+        padding: 0.7rem 1.25rem;
+    }
+
+    .fd-hero--marquee {
+        margin-top: 1rem;
+    }
+
+    .fd-hero--marquee-item {
         font-size: 0.7rem;
     }
 
-    .fd-service-item span {
+    .fd-hero--marquee-item span {
         font-size: 0.6rem;
     }
 
-    .fd-hero--actions {
-        flex-direction: column;
-        width: 100%;
-        box-sizing: border-box;
-        gap: 0.5rem;
-        padding-bottom: 0.5rem;
-        margin-top: 0.75rem;
-    }
+    /* removed actions mobile overrides */
 
     .fd-hero--btn {
         margin: 0 auto;
@@ -362,11 +582,11 @@
         font-size: 0.7rem;
     }
 
-    .fd-hero--description {
+    .fd-hero--mage-text {
         font-size: 0.8rem;
     }
 
-    .fd-hero--services {
+    .fd-hero--marquee {
         display: none;
     }
 

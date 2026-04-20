@@ -1,7 +1,11 @@
 import React, { memo, useRef } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { Sparkle, Linkedin, Github } from 'lucide-react';
+import { QRCodeSVG } from 'qrcode.react';
+import BtnSpace from '@components/BtnSpace';
+import SpacetimeGrid from '@components/SpacetimeGrid';
 import '@styles/hero.css';
 
 /* ── scene layer paths (public/scene/) ── */
@@ -17,249 +21,249 @@ const SCENE_LAYERS = {
 
 const IS_MOBILE = typeof window !== 'undefined' && window.innerWidth <= 768;
 
-/* ── cloud infinite‑loop layer ── */
-function CloudLoop({ src, duration = 60, direction = -1, parallaxY, initial, animate, transition }) {
+/* ── Loader ends at 3.2s, so hero entrance starts slightly after ── */
+const LOADER_DURATION = 3.2;
+const BASE_DELAY = LOADER_DURATION + 0.3; // 3.5s
+
+/* ── Staggered entrance config ── */
+const entrance = {
+    video: {
+        initial: { y: -300, opacity: 0 },
+        animate: { y: 0, opacity: 1 },
+        transition: { delay: BASE_DELAY, duration: 1.4, ease: [0.16, 1, 0.3, 1] },
+    },
+    grid: {
+        initial: { opacity: 0 },
+        animate: { opacity: 1 },
+        transition: { delay: BASE_DELAY + 0.2, duration: 1.2, ease: 'easeOut' },
+    },
+    title: {
+        initial: { y: 60, opacity: 0 },
+        animate: { y: 0, opacity: 1 },
+        transition: { delay: BASE_DELAY + 0.4, duration: 1.0, ease: [0.16, 1, 0.3, 1] },
+    },
+    marquee: {
+        initial: { opacity: 0, y: 20 },
+        animate: { opacity: 1, y: 0 },
+        transition: { delay: BASE_DELAY + 0.7, duration: 0.8, ease: 'easeOut' },
+    },
+    left: {
+        initial: { x: -80, opacity: 0 },
+        animate: { x: 0, opacity: 1 },
+        transition: { delay: BASE_DELAY + 0.8, duration: 1.0, ease: [0.16, 1, 0.3, 1] },
+    },
+    center: {
+        initial: { y: 40, opacity: 0 },
+        animate: { y: 0, opacity: 1 },
+        transition: { delay: BASE_DELAY + 0.9, duration: 1.0, ease: [0.16, 1, 0.3, 1] },
+    },
+    right: {
+        initial: { x: 80, opacity: 0 },
+        animate: { x: 0, opacity: 1 },
+        transition: { delay: BASE_DELAY + 0.8, duration: 1.0, ease: [0.16, 1, 0.3, 1] },
+    },
+};
+
+/* ── Mobile: skip delays, quick fade ── */
+const mobileEntrance = {
+    initial: { opacity: 0, y: 15 },
+    animate: { opacity: 1, y: 0 },
+    transition: { delay: 0.6, duration: 0.6, ease: 'easeOut' },
+};
+
+
+function BlackHole() {
     return (
         <motion.div
-            className="fd-scene--layer-wrapper"
-            initial={IS_MOBILE ? undefined : initial}
-            animate={IS_MOBILE ? undefined : animate}
-            transition={IS_MOBILE ? undefined : transition}
+            initial={IS_MOBILE ? mobileEntrance.initial : entrance.video.initial}
+            animate={IS_MOBILE ? mobileEntrance.animate : entrance.video.animate}
+            transition={IS_MOBILE ? mobileEntrance.transition : entrance.video.transition}
+            className="fd-hero--blackhole-container"
         >
-            <motion.div
-                className="fd-scene--layer-wrapper"
-                style={{ y: IS_MOBILE ? 0 : parallaxY }}
+            <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="auto"
+                disablePictureInPicture
+                disableRemotePlayback
+                poster="data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs="
+                className="fd-hero--blackhole-video"
             >
-                <div className="fd-scene--cloud-track">
-                    <motion.div
-                        className="fd-scene--cloud-slide"
-                        animate={{ x: direction === -1 ? ['0%', '-50%'] : ['-50%', '0%'] }}
-                        transition={{
-                            repeat: Infinity,
-                            duration: IS_MOBILE ? duration * 1.5 : duration,
-                            ease: 'linear',
-                        }}
-                    >
-                        <div className="fd-scene--cloud-bg" style={{ backgroundImage: `url(${src})` }} />
-                        <div className="fd-scene--cloud-bg" style={{ backgroundImage: `url(${src})` }} />
-                    </motion.div>
-                </div>
-            </motion.div>
+                <source src="/blackhole.webm" type="video/webm" />
+            </video>
+
+            {/* Fundido suave al final del video */}
+            <div className="fd-hero--blackhole-overlay" />
         </motion.div>
     );
 }
 
-/* ── parallax layer helper ── */
-function ParallaxLayer({ src, parallaxY, className = '', initial, animate, transition }) {
-    return (
-        <motion.div
-            className="fd-scene--layer-wrapper"
-            initial={IS_MOBILE ? undefined : initial}
-            animate={IS_MOBILE ? undefined : animate}
-            transition={IS_MOBILE ? undefined : transition}
-        >
-            <motion.div
-                className={`fd-scene--layer ${className}`}
-                style={{
-                    y: IS_MOBILE ? 0 : parallaxY,
-                    backgroundImage: `url(${src})`
-                }}
-            />
-        </motion.div>
-    );
-}
 
 const HeroScreen = memo(function HeroScreen() {
     const heroRef = useRef(null);
     const { t } = useTranslation();
 
-    const { scrollYProgress } = useScroll({
-        target: heroRef,
-        offset: ["start start", "end start"],
-    });
-
-    const yBg = useTransform(scrollYProgress, [0, 1], ['0px', '380px']);
-    const yMountain = useTransform(scrollYProgress, [0, 1], ['0px', '320px']);
-    const yClouds = useTransform(scrollYProgress, [0, 1], ['0px', '300px']);
-    const yLake = useTransform(scrollYProgress, [0, 1], ['0px', '260px']);
-
-    const opacityText = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
-
-    const text = "FERNANDO DELVALLE";
-    const chars = text.split("");
-
-    /* On mobile: show text immediately (delay 0). On desktop: staggered entrance. */
-    const getTransition = (index, char) => {
-        if (IS_MOBILE) {
-            return { delay: 0.3 + index * 0.02, type: "spring", damping: 14, stiffness: 120 };
-        }
-        if (char === "O" && index === 7) {
-            return { delay: 4.6, type: "spring", damping: 8, stiffness: 80 };
-        }
-        return {
-            delay: 3.2 + (index * 0.08),
-            type: "spring",
-            damping: 14,
-            stiffness: 100,
-        };
-    };
-
-    const charVariants = {
-        hidden: {
-            y: "100%",
-            rotateZ: IS_MOBILE ? 0 : 65,
-            transformOrigin: "bottom left",
-        },
-        visible: (custom) => ({
-            y: 0,
-            rotateZ: 0,
-            transition: getTransition(custom.index, custom.char),
-        }),
-    };
-
-    const mobileQuickFade = IS_MOBILE
-        ? { delay: 0.6, duration: 0.6, ease: "easeOut" }
-        : undefined;
+    const textFirst = "DELVALLE";
+    const textSecond = "FERNANDO";
 
     return (
         <section className="fd-hero--container" ref={heroRef}>
             {/* ─── SCENE BACKGROUND ─── */}
+            <BlackHole />
             <div className="fd-scene--container">
-                <ParallaxLayer 
-                    src={SCENE_LAYERS.background} 
-                    parallaxY={yBg} 
-                />
-
-                <ParallaxLayer 
-                    src={SCENE_LAYERS.mountain} 
-                    parallaxY={yMountain} 
-                    initial={{ opacity: 0, y: 100 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.5, ease: "easeOut", delay: 3.6 }}
-                />
-
-                <CloudLoop 
-                    src={SCENE_LAYERS.cloud1} 
-                    duration={80} direction={-1} parallaxY={yClouds} 
-                    initial={{ opacity: 0, x: 80 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1.2, ease: "easeOut", delay: 3.2 }}
-                />
-                <CloudLoop 
-                    src={SCENE_LAYERS.cloud2} 
-                    duration={100} direction={1} parallaxY={yClouds} 
-                    initial={{ opacity: 0, x: -80 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1.2, ease: "easeOut", delay: 3.3 }}
-                />
-                <CloudLoop 
-                    src={SCENE_LAYERS.cloud3} 
-                    duration={65} direction={-1} parallaxY={yClouds} 
-                    initial={{ opacity: 0, y: -60 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 1.2, ease: "easeOut", delay: 3.4 }}
-                />
-
-                <ParallaxLayer 
-                    src={SCENE_LAYERS.lake} 
-                    parallaxY={yLake} 
-                    initial={{ opacity: 0, x: -60 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 1.2, ease: "easeOut", delay: 3.2 }}
-                />
-
-                <motion.div
-                    className="fd-scene--layer"
-                    style={{ backgroundImage: `url(${SCENE_LAYERS.rock})` }}
-                    initial={IS_MOBILE ? undefined : { opacity: 0, y: "40%" }}
-                    animate={IS_MOBILE ? undefined : { opacity: 1, y: "0%" }}
-                    transition={IS_MOBILE ? undefined : { duration: 1.5, ease: "easeOut", delay: 3.8 }}
-                />
             </div>
 
             {/* ─── DARK GRADIENT OVERLAY ─── */}
             <div className="fd-scene--overlay" />
 
-            {/* ─── TEXT ─── */}
-            <motion.div layout className="fd-hero--content" style={{ opacity: IS_MOBILE ? 1 : opacityText }}>
-                
-                <motion.div 
-                    className="fd-hero--top-badges"
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={mobileQuickFade || { delay: 4.8, duration: 1.2, ease: "easeOut" }}
-                >
-                    <div className="fd-hero--availability">
-                        <span className="pulse-dot"></span>
-                        {t("hero.badge_freelance", "Available for freelance")}
-                    </div>
-                    <span className="fd-hero--role-tag">{t("hero.badge_role", "Software Engineer & Creative Developer")}</span>
-                </motion.div>
-
-                <motion.h1
-                    layout
-                    className="fd-hero--title"
-                    initial="hidden"
-                    animate="visible"
-                >
-                    {chars.map((char, index) => (
-                        <motion.span
-                            key={index}
-                            className="fd-hero--char"
-                            variants={charVariants}
-                            custom={{ index, char }}
-                        >
-                            {char === " " ? "\u00A0" : char}
-                        </motion.span>
-                    ))}
-                </motion.h1>
-
-                <motion.div
-                    className="fd-hero--description"
-                    initial={{ opacity: 0, y: 15 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={mobileQuickFade || {
-                        delay: 5.0,
-                        duration: 1.2,
-                        ease: "easeOut",
-                    }}
-                >
-                    <p className="fd-desc-text">{t("hero.desc_1", "I build products with real depth.")}</p>
-                    <p className="fd-desc-text" dangerouslySetInnerHTML={{ __html: t("hero.desc_2", "I lead a freelance team where technical criteria <br className=\"fd-hero--br\" /> matters as much as business vision.") }} />
-
-                    <div className="fd-hero--services">
-                        <div className="fd-service-item">
-                            <span>{t("hero.services.web", "Web")}</span>
-                            React, Next.js, Tailwind
-                        </div>
-                        <div className="fd-service-item">
-                            <span>{t("hero.services.mobile", "Mobile")}</span>
-                            React Native, Expo
-                        </div>
-                        <div className="fd-service-item">
-                            <span>{t("hero.services.backend", "Backend")}</span>
-                            Node.js, Laravel, PHP
-                        </div>
-                        <div className="fd-service-item">
-                            <span>{t("hero.services.apis", "APIs")}</span>
-                            n8n
-                        </div>
-                        <div className="fd-service-item">
-                            <span>{t("hero.services.focus", "Focus")}</span>
-                            Fullstack
-                        </div>
-                    </div>
-
-                    <div className="fd-hero--actions">
-                        <a href="https://utterly.com.ar" target="_blank" rel="noreferrer" className="fd-hero--btn fd-hero--btn-primary">
-                            {t("hero.utterlyButton", "Visitar Utterly")}
-                        </a>
-                        <Link to="/contact" className="fd-hero--btn fd-hero--btn-outline">
-                            {t("hero.contactButton", "Hablemos de tu proyecto")}
-                        </Link>
-                    </div>
-                </motion.div>
+            {/* ─── SPACETIME GRID ─── */}
+            <motion.div
+                initial={IS_MOBILE ? undefined : entrance.grid.initial}
+                animate={IS_MOBILE ? undefined : entrance.grid.animate}
+                transition={IS_MOBILE ? undefined : entrance.grid.transition}
+            >
+                <SpacetimeGrid />
             </motion.div>
+
+            {/* ─── TEXT ─── */}
+            <motion.div 
+                className="fd-hero--content"
+                initial={IS_MOBILE ? mobileEntrance.initial : entrance.title.initial}
+                animate={IS_MOBILE ? mobileEntrance.animate : entrance.title.animate}
+                transition={IS_MOBILE ? mobileEntrance.transition : entrance.title.transition}
+            >
+                
+                {false && (
+                    <motion.div 
+                        className="fd-hero--top-badges"
+                        initial={{ opacity: 0, y: 15 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={IS_MOBILE ? mobileEntrance.transition : { delay: BASE_DELAY + 0.5, duration: 1.0, ease: 'easeOut' }}
+                    >
+                        <div className="fd-hero--availability">
+                            <span className="pulse-dot"></span>
+                            {t("hero.badge_freelance", "Available for freelance")}
+                        </div>
+                        <span className="fd-hero--role-tag">{t("hero.badge_role", "Software Engineer & Creative Developer")}</span>
+                    </motion.div>
+                )}
+
+                <h1 className="fd-hero--title">
+                    <div className="fd-hero--title-line">
+                        {textFirst.split("").map((char, i) => (
+                            <span key={i} className="fd-hero--char">
+                                {char === " " ? "\u00A0" : char}
+                            </span>
+                        ))}
+                    </div>
+                    <div className="fd-hero--title-line">
+                        {textSecond.split("").map((char, i) => (
+                            <span key={i} className="fd-hero--char">
+                                {char === " " ? "\u00A0" : char}
+                            </span>
+                        ))}
+                    </div>
+                </h1>
+            </motion.div>
+
+            {/* MARQUEE */}
+            <motion.div 
+                className="fd-hero--marquee"
+                initial={IS_MOBILE ? mobileEntrance.initial : entrance.marquee.initial}
+                animate={IS_MOBILE ? mobileEntrance.animate : entrance.marquee.animate}
+                transition={IS_MOBILE ? mobileEntrance.transition : entrance.marquee.transition}
+            >
+                <div className="fd-hero--marquee-track">
+                    {[...Array(2)].map((_, groupIndex) => (
+                        <div className="fd-hero--marquee-group" key={groupIndex}>
+                            {["Web", "Mobile", "Backend", "APIs", "Fullstack", "Enfocado", "Web", "Mobile", "Backend", "APIs", "Fullstack", "Enfocado"].map((item, idx) => (
+                                <React.Fragment key={idx}>
+                                    <div className="fd-hero--marquee-item">
+                                        <span>{item}</span>
+                                    </div>
+                                    <div className="fd-hero--marquee-separator"><Sparkle size={16} strokeWidth={1.5} /></div>
+                                </React.Fragment>
+                            ))}
+                        </div>
+                    ))}
+                </div>
+            </motion.div>
+
+            {/* BOTTOM LAYOUT */}
+            <div className="fd-hero--bottom-layout">
+                <div className="fd-hero--bottom-grid">
+                    {/* Left: QRs — slides in from left */}
+                    <motion.div 
+                        className="fd-hero--qrs"
+                        initial={IS_MOBILE ? mobileEntrance.initial : entrance.left.initial}
+                        animate={IS_MOBILE ? mobileEntrance.animate : entrance.left.animate}
+                        transition={IS_MOBILE ? mobileEntrance.transition : entrance.left.transition}
+                    >
+                        <div className="fd-hero--qr-item">
+                            <QRCodeSVG 
+                                value="https://linkedin.com/in/fernandodelvalle" 
+                                size={60} 
+                                bgColor="transparent" 
+                                fgColor="#bfa3ff" 
+                                level="M" 
+                            />
+                            <div className="fd-hero--qr-icon">
+                                <Linkedin size={16} color="#bfa3ff" strokeWidth={2} />
+                            </div>
+                        </div>
+                        <div className="fd-hero--qr-item">
+                            <QRCodeSVG 
+                                value="https://github.com/fernandodelvalle" 
+                                size={60} 
+                                bgColor="transparent" 
+                                fgColor="#bfa3ff" 
+                                level="M" 
+                            />
+                            <div className="fd-hero--qr-icon">
+                                <Github size={16} color="#bfa3ff" strokeWidth={2} />
+                            </div>
+                        </div>
+                    </motion.div>
+
+                    {/* Center: Mage + Text — slides up */}
+                    <motion.div 
+                        className="fd-hero--mage-container"
+                        initial={IS_MOBILE ? mobileEntrance.initial : entrance.center.initial}
+                        animate={IS_MOBILE ? mobileEntrance.animate : entrance.center.animate}
+                        transition={IS_MOBILE ? mobileEntrance.transition : entrance.center.transition}
+                    >
+                        <div className="fd-hero--mage-text">
+                            <p className="fd-desc-text">
+                                Desarrollo soluciones tecnológicas sólidas con un enfoque verdaderamente integral. Construyo ecosistemas digitales donde la arquitectura, el diseño y la experiencia de usuario convergen.
+                            </p>
+                            <p className="fd-desc-text">
+                                Lidero un equipo independiente donde la excelencia técnica y la visión estratégica de negocio son el pilar fundamental para llevar cada producto hacia el siguiente nivel de escalabilidad.
+                            </p>
+                        </div>
+                    </motion.div>
+
+                    {/* Right: Buttons — slides in from right */}
+                    <motion.div 
+                        className="fd-hero--side-actions"
+                        initial={IS_MOBILE ? mobileEntrance.initial : entrance.right.initial}
+                        animate={IS_MOBILE ? mobileEntrance.animate : entrance.right.animate}
+                        transition={IS_MOBILE ? mobileEntrance.transition : entrance.right.transition}
+                    >
+                        <BtnSpace 
+                            text={t("hero.utterlyButton", "Utterly")} 
+                            href="https://otter-ly.netlify.app/" 
+                            target="_blank" 
+                            rel="noreferrer" 
+                        />
+                        <BtnSpace 
+                            text={t("hero.contactButton", "Contacto")} 
+                            to="/contact" 
+                        />
+                    </motion.div>
+                </div>
+            </div>
         </section>
     );
 });

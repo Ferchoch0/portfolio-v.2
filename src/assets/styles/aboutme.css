@@ -3,7 +3,7 @@
     height: 300vh;
     background: linear-gradient(to bottom,
             var(--rock-color) 0%,
-            var(--bg-color) 15vh,
+            var(--bg-color) 10vh,
             var(--bg-color) 100%);
     color: var(--text-color);
     z-index: 50;

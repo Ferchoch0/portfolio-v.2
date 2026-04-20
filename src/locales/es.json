@@ -10,7 +10,7 @@
         "desc_1": "Construyo productos con profundidad real.",
         "desc_2": "Lidero un equipo freelance donde el criterio técnico <br className=\"fd-hero--br\" /> importa tanto como la visión de negocio.",
         "utterlyButton": "Visitar Utterly",
-        "contactButton": "Hablemos de tu proyecto",
+        "contactButton": "Hablemos",
         "services": {
             "web": "Web",
             "mobile": "Móvil",
@@ -286,6 +286,9 @@
         "btnRecruiter": "Soy Reclutador",
         "btnClient": "Tengo un Proyecto",
         "goBack": "Volver",
+        "sending": "Enviando...",
+        "sendAnother": "Enviar otro mensaje",
+        "errorMsg": "Hubo un error al enviar el mensaje. Inténtalo de nuevo.",
         "recruiter": {
             "name": "Hola, mi nombre es",
             "namePlh": "Tu nombre",

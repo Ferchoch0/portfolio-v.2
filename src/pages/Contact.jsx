@@ -1,14 +1,53 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import emailjs from '@emailjs/browser';
 import '@styles/contact-page.css';
+
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID_RECRUITER = import.meta.env.VITE_EMAILJS_TEMPLATE_ID_RECRUITER;
+const EMAILJS_TEMPLATE_ID_CLIENT = import.meta.env.VITE_EMAILJS_TEMPLATE_ID_CLIENT;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export default function ContactScreen() {
     const { t } = useTranslation();
     const [formType, setFormType] = useState(null);
+    const [status, setStatus] = useState('idle'); // idle | loading | success | error
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setStatus('loading');
+
+        const form = e.target;
+
+        const templateParams = {
+            name: form.name.value,
+            email: form.email.value,
+            message: form.message.value,
+            ...(formType === 'recruiter' && {
+                company: form.company.value,
+                role: form.role.value,
+            }),
+        };
+
+        try {
+            const templateId = formType === 'recruiter' ? EMAILJS_TEMPLATE_ID_RECRUITER : EMAILJS_TEMPLATE_ID_CLIENT;
+            await emailjs.send(EMAILJS_SERVICE_ID, templateId, templateParams, EMAILJS_PUBLIC_KEY);
+            setStatus('success');
+            form.reset();
+        } catch (err) {
+            console.error(err);
+            setStatus('error');
+        }
+    };
+
+    const handleBack = () => {
+        setFormType(null);
+        setStatus('idle');
+    };
 
     return (
-        <motion.main 
+        <motion.main
             className="fd-contact-page"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -17,14 +56,14 @@ export default function ContactScreen() {
         >
             <div className="fd-contact-container">
                 <header className="fd-contact-header">
-                    <motion.h1 
+                    <motion.h1
                         className="fd-contact-title"
                         initial={{ y: 50, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 0.2, duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         dangerouslySetInnerHTML={{ __html: t('contact.title') }}
                     />
-                    <motion.p 
+                    <motion.p
                         className="fd-contact-subtitle"
                         initial={{ y: 20, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
@@ -36,7 +75,7 @@ export default function ContactScreen() {
 
                 <div className="fd-contact-split">
                     {/* Left: Contact Info */}
-                    <motion.div 
+                    <motion.div
                         className="fd-contact-info"
                         initial={{ x: -30, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
@@ -58,7 +97,7 @@ export default function ContactScreen() {
                     </motion.div>
 
                     {/* Right: Dynamic Selection / Form */}
-                    <motion.div 
+                    <motion.div
                         className="fd-contact-form-wrapper"
                         initial={{ x: 30, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
@@ -66,7 +105,7 @@ export default function ContactScreen() {
                     >
                         <AnimatePresence mode="wait">
                             {!formType ? (
-                                <motion.div 
+                                <motion.div
                                     key="selection"
                                     className="fd-contact-selection"
                                     initial={{ opacity: 0, y: 10 }}
@@ -93,45 +132,75 @@ export default function ContactScreen() {
                                     exit={{ opacity: 0, y: -10 }}
                                     transition={{ duration: 0.3 }}
                                 >
-                                    <button className="fd-contact-goback" onClick={() => setFormType(null)}>
+                                    <button className="fd-contact-goback" onClick={handleBack}>
                                         &larr; {t('contact.goBack')}
                                     </button>
-                                    
-                                    <form className="fd-contact-form" onSubmit={(e) => { e.preventDefault(); alert(t(`contact.${formType}.sent`)); }}>
-                                        <div className="form-group">
-                                            <label htmlFor="name">{t(`contact.${formType}.name`)}</label>
-                                            <input type="text" id="name" required placeholder={t(`contact.${formType}.namePlh`)} />
-                                        </div>
-                                        
-                                        <div className="form-group">
-                                            <label htmlFor="email">{t(`contact.${formType}.email`)}</label>
-                                            <input type="email" id="email" required placeholder={t(`contact.${formType}.emailPlh`)} />
-                                        </div>
 
-                                        {formType === 'recruiter' && (
-                                            <>
-                                                <div className="form-group fd-contact-row">
-                                                    <div className="fd-contact-col">
-                                                        <label htmlFor="company">{t('contact.recruiter.company')}</label>
-                                                        <input type="text" id="company" required placeholder={t('contact.recruiter.companyPlh')} />
-                                                    </div>
-                                                    <div className="fd-contact-col">
-                                                        <label htmlFor="role">{t('contact.recruiter.role')}</label>
-                                                        <input type="text" id="role" required placeholder={t('contact.recruiter.rolePlh')} />
-                                                    </div>
+                                    <AnimatePresence mode="wait">
+                                        {status === 'success' ? (
+                                            <motion.div
+                                                key="success"
+                                                className="fd-contact-feedback fd-contact-feedback--success"
+                                                initial={{ opacity: 0, y: 10 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                exit={{ opacity: 0, y: -10 }}
+                                                transition={{ duration: 0.3 }}
+                                            >
+                                                <p>{t(`contact.${formType}.sent`)}</p>
+                                                <button className="fd-contact-choice-btn" onClick={handleBack}>
+                                                    {t('contact.sendAnother')}
+                                                </button>
+                                            </motion.div>
+                                        ) : (
+                                            <motion.form
+                                                key="form-fields"
+                                                className="fd-contact-form"
+                                                onSubmit={handleSubmit}
+                                                initial={{ opacity: 0 }}
+                                                animate={{ opacity: 1 }}
+                                                exit={{ opacity: 0 }}
+                                                transition={{ duration: 0.2 }}
+                                            >
+                                                <div className="form-group">
+                                                    <label htmlFor="name">{t(`contact.${formType}.name`)}</label>
+                                                    <input type="text" id="name" name="name" required placeholder={t(`contact.${formType}.namePlh`)} />
                                                 </div>
-                                            </>
+
+                                                <div className="form-group">
+                                                    <label htmlFor="email">{t(`contact.${formType}.email`)}</label>
+                                                    <input type="email" id="email" name="email" required placeholder={t(`contact.${formType}.emailPlh`)} />
+                                                </div>
+
+                                                {formType === 'recruiter' && (
+                                                    <div className="form-group fd-contact-row">
+                                                        <div className="fd-contact-col">
+                                                            <label htmlFor="company">{t('contact.recruiter.company')}</label>
+                                                            <input type="text" id="company" name="company" required placeholder={t('contact.recruiter.companyPlh')} />
+                                                        </div>
+                                                        <div className="fd-contact-col">
+                                                            <label htmlFor="role">{t('contact.recruiter.role')}</label>
+                                                            <input type="text" id="role" name="role" required placeholder={t('contact.recruiter.rolePlh')} />
+                                                        </div>
+                                                    </div>
+                                                )}
+
+                                                <div className="form-group">
+                                                    <label htmlFor="message">{t(`contact.${formType}.message`)}</label>
+                                                    <textarea id="message" name="message" required placeholder={t(`contact.${formType}.messagePlh`)} rows="4" />
+                                                </div>
+
+                                                {status === 'error' && (
+                                                    <p className="fd-contact-feedback fd-contact-feedback--error">
+                                                        {t('contact.errorMsg')}
+                                                    </p>
+                                                )}
+
+                                                <button type="submit" className="fd-contact-submit" disabled={status === 'loading'}>
+                                                    {status === 'loading' ? t('contact.sending') : t(`contact.${formType}.submit`)}
+                                                </button>
+                                            </motion.form>
                                         )}
-
-                                        <div className="form-group">
-                                            <label htmlFor="message">{t(`contact.${formType}.message`)}</label>
-                                            <textarea id="message" required placeholder={t(`contact.${formType}.messagePlh`)} rows="4"></textarea>
-                                        </div>
-
-                                        <button type="submit" className="fd-contact-submit">
-                                            {t(`contact.${formType}.submit`)}
-                                        </button>
-                                    </form>
+                                    </AnimatePresence>
                                 </motion.div>
                             )}
                         </AnimatePresence>

@@ -17,6 +17,8 @@
     margin-bottom: 2rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    text-align: left;
+    width: 100%;
 }
 
 .fd-works-title {
@@ -26,6 +28,7 @@
     letter-spacing: -0.04em;
     margin: 0;
     text-transform: uppercase;
+    text-align: left;
 }
 
 /* ── Split Layout ── */
