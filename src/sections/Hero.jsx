@@ -203,7 +203,7 @@ const HeroScreen = memo(function HeroScreen() {
                     >
                         <div className="fd-hero--qr-item">
                             <QRCodeSVG 
-                                value="https://linkedin.com/in/fernandodelvalle" 
+                                value="https://www.linkedin.com/in/fernando-d-delvalle/" 
                                 size={60} 
                                 bgColor="transparent" 
                                 fgColor="#bfa3ff" 
@@ -215,7 +215,7 @@ const HeroScreen = memo(function HeroScreen() {
                         </div>
                         <div className="fd-hero--qr-item">
                             <QRCodeSVG 
-                                value="https://github.com/fernandodelvalle" 
+                                value="https://github.com/Ferchoch0" 
                                 size={60} 
                                 bgColor="transparent" 
                                 fgColor="#bfa3ff" 
