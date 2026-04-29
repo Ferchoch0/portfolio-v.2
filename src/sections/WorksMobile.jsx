@@ -1,4 +1,5 @@
 import { FaArrowRight } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 import '@styles/works-mobile.css';
 
 const mainProjects = [
@@ -12,9 +13,10 @@ const mainProjects = [
  * Each project is a card with an image thumbnail, title, and category.
  */
 export default function WorksMobile({ onOpenProjectsModal }) {
+    const { t } = useTranslation();
     return (
         <section className="fd-works-m" id="works">
-            <h2 className="fd-works-m--title">Selected Works</h2>
+            <h2 className="fd-works-m--title">{t('works.title', 'Selected Works')}</h2>
 
             <div className="fd-works-m--list">
                 {mainProjects.map((project, index) => (
@@ -26,15 +28,15 @@ export default function WorksMobile({ onOpenProjectsModal }) {
                         <div className="fd-works-m--img-wrap">
                             <img 
                                 src={project.image} 
-                                alt={project.title} 
+                                alt={t(`works.projects.${project.id}.title`, project.title)} 
                                 className="fd-works-m--img"
                                 loading="lazy"
                             />
                         </div>
                         <div className="fd-works-m--info">
                             <span className="fd-works-m--num">0{index + 1}</span>
-                            <h3 className="fd-works-m--card-title">{project.title}</h3>
-                            <span className="fd-works-m--cat">{project.category}</span>
+                            <h3 className="fd-works-m--card-title">{t(`works.projects.${project.id}.title`, project.title)}</h3>
+                            <span className="fd-works-m--cat">{t(`works.projects.${project.id}.subtitle`, project.category)}</span>
                         </div>
                     </a>
                 ))}
@@ -42,7 +44,7 @@ export default function WorksMobile({ onOpenProjectsModal }) {
 
             <div className="fd-works-m--footer">
                 <button className="fd-works-m--view-all" onClick={onOpenProjectsModal}>
-                    View all projects <FaArrowRight />
+                    {t('works.viewAllProjects', 'View all projects')} <FaArrowRight />
                 </button>
             </div>
         </section>

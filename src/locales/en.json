@@ -24,13 +24,12 @@
         "about": "About Me",
         "skills": "Skills",
         "works": "Works",
+        "infrastructure": "Infrastructure",
         "dropdown": {
-            "web_architecture_title": "Web Architecture",
-            "web_architecture_desc": "React/Next.js frontend applications",
-            "mobile_engineering_title": "Mobile Engineering",
-            "mobile_engineering_desc": "Cross-platform React Native apps",
-            "backend_systems_title": "Backend Systems",
-            "backend_systems_desc": "Scalable APIs and architectures"
+            "projects_title": "Projects",
+            "projects_desc": "Explore my selected projects and works",
+            "infrastructure_title": "Infrastructure",
+            "infrastructure_desc": "Own server and team tools portal"
         },
         "contact": "Contact",
         "resume": "Resume"
@@ -73,6 +72,7 @@
     "works": {
         "title": "Selected Works",
         "moreProjects": "More Projects",
+        "viewAllProjects": "View all projects",
         "moreDetails": "More Details",
         "goBack": "Go Back",
         "viewDemo": "View Demo",
@@ -105,7 +105,7 @@
                 ]
             },
             "otter-v2": {
-                "title": "Otter Task",
+                "title": "Otter Task - 2.0",
                 "subtitle": "v.2 - React Migration",
                 "description": "Migration and modernization of Otter Task to SPA architecture. Frontend completely rewritten in React consuming a RESTful PHP API. Includes new features: ticket generation, QR system, improved sales modal, and more professional workflows. Deployed on custom infrastructure with Nginx and Ngrok.",
                 "longDescription": "",
@@ -118,6 +118,22 @@
                     "Modern user interface",
                     "RESTful API consumption",
                     "Advanced new features"
+                ]
+            },
+            "cpa-publish": {
+                "title": "CPA Refrigeration - Promotional",
+                "subtitle": "Promotional Website",
+                "description": "Website built with React featuring animations and modern design to promote the CPA company and its refrigeration services.",
+                "longDescription": "Due to a time emergency, the client required a website for the company. In a span of 3 days, this promotional website was built with animations and modern design. React was used for the frontend.",
+                "year": "2026",
+                "duration": "3 days (client urgency)",
+                "collaborators": "1 collaborator",
+                "role": "Web Developer",
+                "features": [
+                    "Animations",
+                    "Modern design",
+                    "SEO Optimized",
+                    "Responsive Design"
                 ]
             },
             "cpa": {
@@ -150,6 +166,22 @@
                     "Library updates",
                     "New feature implementation",
                     "Module refactoring"
+                ]
+            },
+            "infinito-frame": {
+                "title": "Infinite Frame",
+                "subtitle": "Web system for sublimation",
+                "description": "Web system for a client with a sublimation business. Different image editing functions and 3D models to visualize the final product.",
+                "longDescription": "",
+                "year": "2026",
+                "duration": "1.5 weeks",
+                "collaborators": "1 collaborator",
+                "role": "Web Developer",
+                "features": [
+                    "3D animations with Three.js",
+                    "Minimalist design",
+                    "CSS animations",
+                    "Framer Motion animations"
                 ]
             },
             "mottoso": {

@@ -1,7 +1,6 @@
 .fd-works {
     width: 100%;
     padding: var(--spacing-24) 0;
-    background-color: var(--bg-inverted-color, #f9f9fb);
     color: var(--text-inverted-color, #1a1c1d);
     position: relative;
     z-index: 1;

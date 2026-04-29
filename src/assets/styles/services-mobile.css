@@ -4,7 +4,6 @@
 
 .fd-services-m {
     width: 100%;
-    background-color: var(--bg-inverted-color, #f9f9fb);
     color: var(--text-inverted-color, #1a1c1d);
     padding: 3.5rem 1.5rem;
     box-sizing: border-box;

@@ -24,13 +24,12 @@
         "about": "Sobre Mí",
         "skills": "Habilidades",
         "works": "Proyectos",
+        "infrastructure": "Infraestructura",
         "dropdown": {
-            "web_architecture_title": "Arquitectura Web",
-            "web_architecture_desc": "Aplicaciones frontend con React/Next.js",
-            "mobile_engineering_title": "Ingeniería Móvil",
-            "mobile_engineering_desc": "Apps cross-platform con React Native",
-            "backend_systems_title": "Sistemas Backend",
-            "backend_systems_desc": "APIs escalables y arquitecturas robustas"
+            "projects_title": "Proyectos",
+            "projects_desc": "Explora mis proyectos y trabajos seleccionados",
+            "infrastructure_title": "Infraestructura",
+            "infrastructure_desc": "Servidor propio y portal de herramientas del equipo"
         },
         "contact": "Contacto",
         "resume": "Currículum"
@@ -73,6 +72,7 @@
     "works": {
         "title": "Proyectos Seleccionados",
         "moreProjects": "Más Proyectos",
+        "viewAllProjects": "Ver todos los proyectos",
         "moreDetails": "Más Detalles",
         "goBack": "Volver",
         "viewDemo": "Ver Demo",
@@ -105,7 +105,7 @@
                 ]
             },
             "otter-v2": {
-                "title": "Otter Task",
+                "title": "Otter Task - 2.0",
                 "subtitle": "v.2 - Migración a React",
                 "description": "Migración y modernización de Otter Task a arquitectura SPA. Frontend completamente reescrito en React consumiendo API RESTful en PHP. Incluye nuevas funcionalidades: generación de tickets, sistema QR, modal de ventas mejorado y flujos de trabajo más profesionales. Desplegado en infraestructura propia con Nginx y Ngrok.",
                 "longDescription": "",
@@ -118,6 +118,22 @@
                     "Interfaz de usuario moderna",
                     "Consumo de API RESTful",
                     "Nuevas funcionalidades avanzadas"
+                ]
+            },
+            "cpa-publish":{
+                "title": "CPA Refrigeración - Publicitaria",
+                "subtitle": "Web Publicitaria",
+                "description": "Web hecha en React con animaciones y diseño moderno para dar publicidad a la empresa CPA y sus servicios de refrigeración.",
+                "longDescription": "En vista de una emergencia de tiempo, el cliente requería una web para la empresa. En un lapso de 3 días se hizo esta web publicitaria con animaciones y diseño moderno. Se usó React para el frontend.",
+                "year": "2026",
+                "duration": "3 dias (urgencia del cliente)",
+                "collaborators": "1 colaborador",
+                "role": "Desarrollador Web",
+                "features": [
+                    "Animaciones",
+                    "Diseño moderno",
+                    "SEO Optimizado",
+                    "Responsive Design"
                 ]
             },
             "cpa": {
@@ -152,9 +168,25 @@
                     "Refactorización de módulos"
                 ]
             },
+            "infinito-frame":{
+                "title": "Infinito Frame",
+                "subtitle": "Sistema web para sublimacion",
+                "description": "Sistema web para cliente con un emprendimiento de sublimacion. Diferentes funciones de edicion de imagenes y modelos 3D para visualizar el producto final.",
+                "longDescription": "",
+                "year": "2026",
+                "duration": "1.5 semanas",
+                "collaborators": "1 colaborador",
+                "role": "Desarrollador Web",
+                "features": [
+                    "Animaciones 3D con Three.js",
+                    "Diseño Minimalista",
+                    "Animaciones con CSS",
+                    "Animaciones con Framer Motion"
+                ]
+            },
             "mottoso": {
                 "title": "Mottoso Propiedades",
-                "subtitle": "Plataforma Inmobiliaria Completa",
+                "subtitle": "Plataforma Inmobiliaria",
                 "description": "Plataforma inmobiliaria completa con catálogo de propiedades para compra y alquiler, sistema de tasación, integración de mapas interactivos, formularios de contacto y panel administrativo. Desarrollado en equipo con React y PHP. Desplegado en infraestructura propia con Nginx.",
                 "longDescription": "",
                 "year": "2025",

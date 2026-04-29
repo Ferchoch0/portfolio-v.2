@@ -24,13 +24,12 @@
         "about": "Chi Sono",
         "skills": "Competenze",
         "works": "Progetti",
+        "infrastructure": "Infrastruttura",
         "dropdown": {
-            "web_architecture_title": "Architettura Web",
-            "web_architecture_desc": "Applicazioni frontend con React/Next.js",
-            "mobile_engineering_title": "Ingegneria Mobile",
-            "mobile_engineering_desc": "App cross-platform con React Native",
-            "backend_systems_title": "Sistemi Backend",
-            "backend_systems_desc": "API scalabili e architetture robuste"
+            "projects_title": "Progetti",
+            "projects_desc": "Esplora i miei progetti e lavori selezionati",
+            "infrastructure_title": "Infrastruttura",
+            "infrastructure_desc": "Server proprio e portale degli strumenti di squadra"
         },
         "contact": "Contatti",
         "resume": "Curriculum"
@@ -73,6 +72,7 @@
     "works": {
         "title": "Progetti Selezionati",
         "moreProjects": "Altri Progetti",
+        "viewAllProjects": "Vedi tutti i progetti",
         "moreDetails": "Maggiori Dettagli",
         "goBack": "Torna Indietro",
         "viewDemo": "Vedi Demo",
@@ -105,7 +105,7 @@
                 ]
             },
             "otter-v2": {
-                "title": "Otter Task",
+                "title": "Otter Task - 2.0",
                 "subtitle": "v.2 - Migrazione a React",
                 "description": "Migrazione e modernizzazione di Otter Task verso un'architettura SPA. Frontend completamente riscritto in React che consuma un'API RESTful in PHP. Include nuove funzionalità: generazione di ticket, sistema QR, modale vendite migliorato e flussi di lavoro più professionali. Distribuito su infrastruttura propria con Nginx e Ngrok.",
                 "longDescription": "",
@@ -118,6 +118,22 @@
                     "Interfaccia utente moderna",
                     "Consumo API RESTful",
                     "Nuove funzionalità avanzate"
+                ]
+            },
+            "cpa-publish": {
+                "title": "CPA Refrigerazione - Promozionale",
+                "subtitle": "Sito Web Promozionale",
+                "description": "Sito web realizzato in React con animazioni e design moderno per promuovere l'azienda CPA e i suoi servizi di refrigerazione.",
+                "longDescription": "A causa di un'emergenza di tempo, il cliente necessitava di un sito web per l'azienda. In un lasso di tempo di 3 giorni è stato realizzato questo sito web promozionale con animazioni e design moderno. È stato utilizzato React per il frontend.",
+                "year": "2026",
+                "duration": "3 giorni (urgenza del cliente)",
+                "collaborators": "1 collaboratore",
+                "role": "Sviluppatore Web",
+                "features": [
+                    "Animazioni",
+                    "Design moderno",
+                    "SEO Ottimizzato",
+                    "Design Responsive"
                 ]
             },
             "cpa": {
@@ -150,6 +166,22 @@
                     "Aggiornamento librerie",
                     "Implementazione nuove funzionalità",
                     "Refactoring moduli"
+                ]
+            },
+            "infinito-frame": {
+                "title": "Infinite Frame",
+                "subtitle": "Sistema web per sublimazione",
+                "description": "Sistema web per un cliente con un'attività di sublimazione. Diverse funzioni di editing delle immagini e modelli 3D per visualizzare il prodotto finale.",
+                "longDescription": "",
+                "year": "2026",
+                "duration": "1.5 settimane",
+                "collaborators": "1 collaboratore",
+                "role": "Sviluppatore Web",
+                "features": [
+                    "Animazioni 3D con Three.js",
+                    "Design Minimalista",
+                    "Animazioni CSS",
+                    "Animazioni con Framer Motion"
                 ]
             },
             "mottoso": {

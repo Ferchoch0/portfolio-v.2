@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { FaTimes, FaBars, FaChevronDown, FaGithub, FaLinkedin, FaArrowRight, FaTerminal } from "react-icons/fa";
+import { FaTimes, FaBars, FaChevronDown, FaGithub, FaLinkedin, FaArrowRight, FaTerminal, FaServer } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
 import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
 import { useLocation } from "react-router-dom";
@@ -45,39 +45,31 @@ export default function Navbar() {
                 <div className={`nav-letta-center ${isOpen ? 'open' : ''}`}>
                     <ul className="nav-letta-links">
                         <li className="nav-letta-item">
-                            <CustomLink to="home" closeMenu={closeMenu}>{t("navbar.home", "Home")}</CustomLink>
+                            <CustomLink to="home" smooth={true} duration={600} offset={-70} onClick={handleLogoClick} closeMenu={closeMenu}>{t("navbar.home", "Home")}</CustomLink>
                         </li>
                         
                         <li className="nav-letta-item has-dropdown">
                             <span className="nav-dropdown-trigger">
-                                {t("navbar.works", "Works")} <FaChevronDown className="chevron" />
+                                {t("navbar.works", "Proyectos")} <FaChevronDown className="chevron" />
                             </span>
                             
                             <div className="nav-letta-dropdown">
                                 <ScrollLink to="works" smooth={true} duration={600} offset={-70} onClick={closeMenu} className="dropdown-panel-item">
                                     <div className="dp-item-icon"><FaTerminal /></div>
                                     <div className="dp-item-text">
-                                        <h4>{t("navbar.dropdown.web_architecture_title", "Web Architecture")}</h4>
-                                        <p>{t("navbar.dropdown.web_architecture_desc", "React/Next.js frontend applications")}</p>
+                                        <h4>{t("navbar.dropdown.projects_title", "Proyectos")}</h4>
+                                        <p>{t("navbar.dropdown.projects_desc", "Explora mis proyectos seleccionados")}</p>
                                     </div>
                                     <FaArrowRight className="dp-item-arrow" />
                                 </ScrollLink>
-                                <ScrollLink to="works" smooth={true} duration={600} offset={-70} onClick={closeMenu} className="dropdown-panel-item">
-                                    <div className="dp-item-icon"><FaTerminal /></div>
+                                <a href="/infrastructure" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="dropdown-panel-item" style={{textDecoration: 'none'}}>
+                                    <div className="dp-item-icon"><FaServer /></div>
                                     <div className="dp-item-text">
-                                        <h4>{t("navbar.dropdown.mobile_engineering_title", "Mobile Engineering")}</h4>
-                                        <p>{t("navbar.dropdown.mobile_engineering_desc", "Cross-platform React Native apps")}</p>
+                                        <h4>{t("navbar.dropdown.infrastructure_title", "Infraestructura")}</h4>
+                                        <p>{t("navbar.dropdown.infrastructure_desc", "Servidor propio y portal de equipo")}</p>
                                     </div>
                                     <FaArrowRight className="dp-item-arrow" />
-                                </ScrollLink>
-                                <ScrollLink to="works" smooth={true} duration={600} offset={-70} onClick={closeMenu} className="dropdown-panel-item">
-                                    <div className="dp-item-icon"><FaTerminal /></div>
-                                    <div className="dp-item-text">
-                                        <h4>{t("navbar.dropdown.backend_systems_title", "Backend Systems")}</h4>
-                                        <p>{t("navbar.dropdown.backend_systems_desc", "Scalable APIs and architectures")}</p>
-                                    </div>
-                                    <FaArrowRight className="dp-item-arrow" />
-                                </ScrollLink>
+                                </a>
                             </div>
                         </li>
 

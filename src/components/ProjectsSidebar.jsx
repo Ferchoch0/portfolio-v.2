@@ -2,17 +2,10 @@ import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaTimes } from 'react-icons/fa';
 import '@styles/sidebar.css';
-
-const allProjects = [
-    { id: "otter-v2", name: "Otter Task V2", year: "2024" },
-    { id: "cpa", name: "CPA Admin Panel", year: "2023" },
-    { id: "cpa-desinfeccion", name: "CPA Desinfección", year: "2023" },
-    { id: "mottoso", name: "Mottoso Real Estate", year: "2022" },
-    { id: "beretta", name: "Beretta System", year: "2022" },
-    { id: "portfolio-v.1", name: "Legacy Portfolio V1", year: "2021" }
-];
+import { useProjects } from '../hooks/useProjects';
 
 export default function ProjectsSidebar({ isOpen, onClose }) {
+    const { projects } = useProjects();
     
     // Prevent scrolling when sidebar is open
     useEffect(() => {
@@ -57,15 +50,15 @@ export default function ProjectsSidebar({ isOpen, onClose }) {
                         
                         <div className="fd-sidebar-content">
                             <ul className="fd-sidebar-list">
-                                {allProjects.map((proj, i) => (
+                                {projects.map((proj, i) => (
                                     <motion.li 
-                                        key={proj.id}
+                                        key={proj.key}
                                         initial={{ opacity: 0, x: 20 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: 0.1 + (i * 0.05) }}
                                     >
-                                        <a href={`/project/${proj.id}`} className="fd-sidebar-link">
-                                            <span className="fd-sidebar-name">{proj.name}</span>
+                                        <a href={`/project/${proj.key}`} className="fd-sidebar-link">
+                                            <span className="fd-sidebar-name">{proj.title}</span>
                                             <span className="fd-sidebar-year">{proj.year}</span>
                                         </a>
                                     </motion.li>

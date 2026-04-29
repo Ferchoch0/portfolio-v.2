@@ -3,6 +3,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FaArrowRight } from 'react-icons/fa';
+import { useTranslation } from 'react-i18next';
 import '@styles/works.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -28,6 +29,7 @@ const mainProjects = [
 ];
 
 export default function Works({ onOpenProjectsModal }) {
+    const { t } = useTranslation();
     const sectionRef = useRef(null);
     const splitLayoutRef = useRef(null);
     const gridIntroRef = useRef(null);
@@ -158,7 +160,7 @@ export default function Works({ onOpenProjectsModal }) {
             {/* The Actual Split Layout (Hidden initially, then fade in) */}
             <div className="fd-works-container" ref={splitLayoutRef}>
                 <header className="fd-works-header">
-                    <h2 className="fd-works-title">Selected Works</h2>
+                    <h2 className="fd-works-title">{t('works.title', 'Selected Works')}</h2>
                 </header>
 
                 <div className="fd-works-split">
@@ -173,8 +175,8 @@ export default function Works({ onOpenProjectsModal }) {
                                 }}
                             >
                                 <span className="fd-works-row-num">0{index + 1}</span>
-                                <h3 className="fd-works-row-title">{project.title}</h3>
-                                <span className="fd-works-row-cat">{project.category}</span>
+                                <h3 className="fd-works-row-title">{t(`works.projects.${project.id}.title`, project.title)}</h3>
+                                <span className="fd-works-row-cat">{t(`works.projects.${project.id}.subtitle`, project.category)}</span>
                             </a>
                         ))}
                     </div>
@@ -185,7 +187,7 @@ export default function Works({ onOpenProjectsModal }) {
                                 <img 
                                     key={`img-${project.id}`}
                                     src={project.image} 
-                                    alt={`Project ${project.title}`} 
+                                    alt={`Project ${t(`works.projects.${project.id}.title`, project.title)}`} 
                                     className={`fd-works-image img-${index}`} 
                                     style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }}
                                 />
@@ -199,7 +201,7 @@ export default function Works({ onOpenProjectsModal }) {
                         className="fd-works-view-all" 
                         onClick={onOpenProjectsModal}
                     >
-                        View all projects <FaArrowRight className="link-arrow" />
+                        {t('works.viewAllProjects', 'View all projects')} <FaArrowRight className="link-arrow" />
                     </button>
                 </div>
             </div>

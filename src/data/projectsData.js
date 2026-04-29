@@ -14,6 +14,20 @@ export const projectsData = [
       demo: ""
   },
   {
+      key: "cpa-publish",
+      subtitleKey: "publishPanel",
+      image: "works/cpa-published/cpa-pub-1.png",
+      gallery: ["works/cpa-published/cpa-pub-1.png", "works/cpa-published/cpa-pub-2.png", "works/cpa-published/cpa-pub-3.png", "works/cpa-published/cpa-pub-4.png", "works/cpa-published/cpa-pub-5.png", "works/cpa-published/cpa-pub-6.png", "works/cpa-published/cpa-pub-7.png"],
+      languages: ["React", "SEO", "CSS", "Framer Motion"],
+      features: [
+          "SEO Optimizado",
+          "Diseño Minimalista",
+          "Animaciones con CSS",
+          "Animaciones con Framer Motion",
+        ],
+      demo: "https://cpacontrol.com.ar/"
+  },
+  {
       key: "cpa",
       subtitleKey: "panel",
       image: "works/pr-6.png",
@@ -39,6 +53,19 @@ export const projectsData = [
           "Sistema de reportes",
           "Gestión de incidencias"
       ]
+  },
+  {
+      key: "infinito-frame",
+      subtitleKey: "Infinite frame",
+      image: "works/infinite-frame/inf-1.png",
+      gallery: ["works/infinite-frame/inf-1.png", "works/infinite-frame/inf-2.png", "works/infinite-frame/inf-3.png", "works/infinite-frame/inf-4.png", "works/infinite-frame/inf-5.png", "works/infinite-frame/inf-6.png", "works/infinite-frame/inf-7.png", "works/infinite-frame/inf-8.png"],
+      languages: ["React", "CSS", "Three.js"],
+      features: [
+          "modelos 3D con Three.js",
+          "diferentes funciones de edicion de imagenes",
+          "diseño minimalista"
+        ],
+      demo: ""
   },
   {
       key: "mottoso",

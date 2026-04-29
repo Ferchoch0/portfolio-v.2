@@ -4,7 +4,6 @@
 
 .fd-services {
     width: 100%;
-    background-color: var(--bg-inverted-color, #f9f9fb);
     color: var(--text-inverted-color, #1a1c1d);
     position: relative;
     overflow: hidden;
