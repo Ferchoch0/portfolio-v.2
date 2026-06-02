@@ -106,7 +106,8 @@ export const projectsData = [
           "App móvil nativa",
           "Sistema de reportes",
           "Gestión de incidencias"
-      ]
+      ],
+      demo: "https://lithos-tattostudios.netlify.app/",
   },
   {
       key: "otter",
@@ -133,7 +134,8 @@ export const projectsData = [
           "App móvil nativa",
           "Sistema de reportes",
           "Gestión de incidencias"
-      ]
+      ],
+      demo: "https://tateti-ferne.netlify.app",
   },
   {
       key: "portfolio-v.1",
@@ -189,5 +191,6 @@ export const projectsData = [
           "Gestión de incidencias"
       ],
       languages: ["JavaScript", "Canvas API"],
+      demo: "https://tattosizer.netlify.app/",
   },
 ];
