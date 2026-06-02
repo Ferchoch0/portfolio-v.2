@@ -11,7 +11,7 @@ export const projectsData = [
           "API REST completa",
           "Notificaciones push"
       ],
-      demo: ""
+      demo: "https://ottertask.netlify.app/"
   },
   {
       key: "cpa-publish",
@@ -25,7 +25,7 @@ export const projectsData = [
           "Animaciones con CSS",
           "Animaciones con Framer Motion",
         ],
-      demo: "https://cpacontrol.com.ar/"
+      demo: "https://cpacontrol.com.ar/",
   },
   {
       key: "cpa",
@@ -65,7 +65,8 @@ export const projectsData = [
           "diferentes funciones de edicion de imagenes",
           "diseño minimalista"
         ],
-      demo: ""
+      demo: "https://sublime-frame.netlify.app/",
+      github: "https://github.com/fernando-delvalle/infinite-frame",
   },
   {
       key: "mottoso",
