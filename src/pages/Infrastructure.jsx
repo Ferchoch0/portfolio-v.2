@@ -1,7 +1,7 @@
 import { useRef, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { FaArrowLeft, FaServer, FaNodeJs, FaPhp, FaPython, FaDocker, FaDiscord, FaShieldAlt, FaUsers, FaMapMarkerAlt, FaCalculator, FaChartBar, FaUserShield, FaPowerOff, FaTerminal, FaSyncAlt, FaBell, FaWifi, FaCloudDownloadAlt } from 'react-icons/fa';
+import { FaArrowLeft, FaServer, FaNodeJs, FaPhp, FaPython, FaDocker, FaDiscord, FaShieldAlt, FaUsers, FaMapMarkerAlt, FaCalculator, FaChartBar, FaUserShield, FaPowerOff, FaTerminal, FaSyncAlt, FaBell, FaWifi, FaCloudDownloadAlt, FaRobot, FaCogs, FaBrain, FaTelegram } from 'react-icons/fa';
 import { SiNginx, SiCloudflare, SiUbuntu, SiN8N } from 'react-icons/si';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -272,7 +272,7 @@ export default function Infrastructure() {
                     </div>
 
                     {/* ── S5: Discord — Layered depth composition ── */}
-                    <div className="fd-infra--section fd-infra--section-dark fd-infra--section-final">
+                    <div className="fd-infra--section fd-infra--section-dark">
                         <div className="fd-infra--s5-layout">
                             <div className="fd-infra--s5-left" data-anim>
                                 <span className="fd-infra--section-num">05</span>
@@ -292,6 +292,46 @@ export default function Infrastructure() {
                                     <img src="/works/infraestructure/discord.png" alt="Otterly Discord" className="fd-infra--s5-card" />
                                     <img src="/works/infraestructure/mensaje_ds.png" alt="Bot Notification" className="fd-infra--s5-notif" />
                                     <div className="fd-infra--s5-glow"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* ── S6: OpenClaw — Multi-agent support ── */}
+                    <div className="fd-infra--section fd-infra--section-light fd-infra--section-final">
+                        <div className="fd-infra--s6-layout">
+                            <div className="fd-infra--s6-left" data-anim>
+                                <span className="fd-infra--section-num">06</span>
+                                <h2 className="fd-infra--section-heading">Soporte<br/>Multiagente</h2>
+                                <p className="fd-infra--section-text">
+                                    Integré OpenClaw como capa de inteligencia operativa. Agentes autónomos que resuelven 
+                                    tareas técnicas que el portal no cubre — deploys complejos, diagnósticos, migraciones 
+                                    y mantenimiento — controlados de forma remota a través de Telegram sin intervención humana.
+                                </p>
+                                <div className="fd-infra--s6-capabilities">
+                                    <div className="fd-infra--s6-cap" data-anim>
+                                        <FaRobot className="fd-infra--s6-cap-ico" />
+                                        <div><strong>Agentes Autónomos</strong><p>Ejecutan tareas complejas sin supervisión directa</p></div>
+                                    </div>
+                                    <div className="fd-infra--s6-cap" data-anim>
+                                        <FaCogs className="fd-infra--s6-cap-ico" />
+                                        <div><strong>Operaciones Técnicas</strong><p>Diagnósticos, rollbacks y hotfixes automatizados</p></div>
+                                    </div>
+                                    <div className="fd-infra--s6-cap" data-anim>
+                                        <FaTelegram className="fd-infra--s6-cap-ico" />
+                                        <div><strong>Control por Telegram</strong><p>Acceso remoto inmediato y ejecución de comandos vía chat</p></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="fd-infra--s6-right" data-anim>
+                                <div className="fd-infra--s6-scene">
+                                    <div className="fd-infra--s6-glow"></div>
+                                    <img src="/openclaw.png" alt="OpenClaw Multi-Agent" className="fd-infra--s6-img" />
+                                    <div className="fd-infra--s6-agents">
+                                        <div className="fd-infra--s6-agent-badge"><FaRobot /> deploy-agent</div>
+                                        <div className="fd-infra--s6-agent-badge"><FaCogs /> diag-agent</div>
+                                        <div className="fd-infra--s6-agent-badge"><FaBrain /> ops-agent</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
